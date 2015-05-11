@@ -322,6 +322,60 @@ Data/nlines_by_ver.csv: Python/grab_lines.py Data/versions.txt
 
 
 
+\begin{frame}[c]{4. Turn scripts into reproducible reports}
+
+
+\only<1|handout 0>{\figw{Figs/example_Rmd.png}{0.92}}
+\only<2>{\figw{Figs/example_Rmd_source.png}{0.92}}
+
+\note{I {\nhilit love} R Markdown for making reproducible reports that
+  document the full details of my analysis. R Markdown mixes Markdown
+  (for light-weight markup of text) and R code chunks; when processed
+  with knitr, the R code is executed and results inserted into the
+  final document.
+
+  With these informal reports, I seek to fully capture the entirety of
+  my data explorations and decisions.
+}
+\end{frame}
+
+
+\begin{frame}[fragile,c]{5. Turn repeated code into functions}
+
+\begin{semiverbatim}
+\begin{lstlisting}
+# Python
+def read_genotypes (filename):
+    "Read matrix of genotype data"
+
+# R
+plot_genotypes <-
+function(genotypes, ...)
+{
+}
+\end{lstlisting}
+\end{semiverbatim}
+
+\note{Pull out complex or repeated code as a separate function.
+  This makes your code easier to read and maintain.}
+\end{frame}
+
+
+\begin{frame}[c]{6. Put those functions into a package/module}
+
+  \centering
+  \Large
+  {\hilit DRY}: Don't repeat yourself
+
+  \note{It's surprisingly easy to create an R package (see
+    {\tt http://kbroman.org/pkg_primer}) and it's even easier to make
+    a Python module.
+
+    When writing functions, try to write them in a somewhat-general
+    way and then pull them out of the project as separate package or
+    module, so that you (and/or others) may reuse them for other purposes.
+}
+\end{frame}
 
 
 \end{document}
