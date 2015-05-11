@@ -86,7 +86,9 @@
 \begin{frame}[c]{}
 \centerline{\Large In what order do I run these scripts?}
 
-\note{Sometimes the process of data file manipulation and data
+\note{Let me start with some examples of reproducibility gone wrong.
+
+  Sometimes the process of data file manipulation and data
   cleaning gets spread across a bunch of scripts that need to be
   executed in a particular order. Will I record this information? Is
   it obvious what script does what?}
@@ -124,9 +126,10 @@
 \begin{frame}[c]{}
 \centerline{\Large "Your script is now giving an error."}
 
-\note{It was working last week. Well, last month, at least. How easy
-  is it to go back through that script's history to see where and why
-  it stopped working?}
+\note{It was working last week. Well, last month, at least.
+
+How easy is it to go back through that script's history to see where
+and why it stopped working?}
 \end{frame}
 
 
@@ -168,7 +171,7 @@ Reproducible
   methods may be poorly behaved. There could be experimental
   artifacts.
 
-  (But reproducibility is probably correlated with correctness.)
+  (But reproducibility is probably associated with correctness.)
 
   Note that some scientists say replicable for what I call
   reproducible, and vice versa.
@@ -219,6 +222,21 @@ Reproducible
   will have greater impact.
 
 Your code and analyses will be easier to debug, maintain, and extend.
+}
+\end{frame}
+
+
+\begin{frame}[c]{Steps toward reproducible research}
+
+  \centering
+  \Large
+
+  \href{http://kbroman.org/steps2rr}{\tt \color{foreground} kbroman.org/steps2rr}
+
+\note{The above website contains my thoughts on how to towards full
+  reproducibility.
+
+  Don't try to change every aspect of your workflow all at once.
 }
 \end{frame}
 
@@ -340,7 +358,7 @@ Data/nlines_by_ver.csv: Python/grab_lines.py Data/versions.txt
 \figw{Figs/example_Rmd.png}{0.92}
 \onslide<2>{
   \vspace*{-0.45\textheight}
-  \hspace*{0.05\textwidth}
+  \hspace*{0.10\textwidth}
   \figw{Figs/example_Rmd_source.png}{0.92}
 }
 
@@ -352,6 +370,8 @@ Data/nlines_by_ver.csv: Python/grab_lines.py Data/versions.txt
 
   With these informal reports, I seek to fully capture the entirety of
   my data explorations and decisions.
+
+  Python people should look at iPython notebooks.
 }
 \end{frame}
 
@@ -400,26 +420,26 @@ function(genotypes, ...)
 \end{frame}
 
 
-\begin{frame}[c]{7. Use version control (git/GitHub)}
+\begin{frame}<handout:0>[c]{7. Use version control (git/GitHub)}
 
 \vspace*{3mm}
 
 \centering
 
 % comic from http://www.phdcomics.com/comics/archive.php?comicid=1531
-\only<1|handout 0>{\figh{Figs/phd101212s.png}{0.8}}
+\only<1>{\figh{Figs/phd101212s.png}{0.8}}
 
 \end{frame}
 
 
-\begin{frame}[c]{7. Use version control (git/GitHub)}
+\begin{frame}<handout:0>[c]{7. Use version control (git/GitHub)}
 
 \only<1>{\addtocounter{framenumber}{-1}}
 
 \centering
 
-\only<1-2|handout 0>{\figh{Figs/example_repo}{0.80}}
-\onslide<2|handout 0>{
+\only<1-2>{\figh{Figs/example_repo}{0.80}}
+\onslide<2>{
   \vspace{-0.65\textheight}
   \figh{Figs/example_repo_zoom}{0.55}
 }
@@ -438,6 +458,19 @@ function(genotypes, ...)
 \only<2>{\figh{Figs/example_commit}{0.80}}
 
 \note{
+  git has a steep learning curve, but ultimately I think you'll find
+  it really helpful.
+
+  The big selling point is in collaboration: merging changes from
+  collaborators, and keep your work synchronized.
+
+  Longer term, there's great value in having the entire history of
+  changes to your project. If something stops working, you can go
+  back to any point in that history to see when it stopped working and
+  why.
+
+  With git, you can also work on new features or analyses without fear
+  of breaking the parts that are currently working well.
 }
 \end{frame}
 
@@ -455,6 +488,15 @@ function(genotypes, ...)
 {\textendash} \href{http://blog.codinghorror.com/pick-a-license-any-license/}{Jeff Atwood}
 
 \note{
+  If you pick a license for your software, no one else can use it.
+
+  So if you want to distribute your code so that others can reproduce
+  your analyses, you need to pick a license, any license.
+
+  I choose between the MIT license and the GPL.
+
+  Don't use the Creative Commons licenses for code. But feel free to
+  use them for other things.
 }
 \end{frame}
 
@@ -473,7 +515,8 @@ function(genotypes, ...)
   \item Pick a license, any license
   \end{enumerate}
 
-\note{
+  \note{
+    It's always good to include a summary.
 }
 \end{frame}
 
@@ -498,6 +541,7 @@ Slides: \href{http://bit.ly/Broman2015-05}{\tt bit.ly/Broman2015-05} \quad
 
 
 \note{
+  Here's where you can find me, as well as the slides for this talk.
 }
 \end{frame}
 
