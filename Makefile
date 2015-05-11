@@ -4,7 +4,7 @@ $(STEM).pdf: $(STEM).tex header.tex
 	xelatex $<
 
 notes: $(STEM)_withnotes.pdf
-all: $(STEM).pdf notes
+all: $(STEM).pdf notes web
 
 $(STEM)_withnotes.pdf: $(STEM)_withnotes.tex header.tex
 	xelatex $(STEM)_withnotes
@@ -13,3 +13,6 @@ $(STEM)_withnotes.pdf: $(STEM)_withnotes.tex header.tex
 
 $(STEM)_withnotes.tex: $(STEM).tex Ruby/createVersionWithNotes.rb
 	Ruby/createVersionWithNotes.rb $(STEM).tex $(STEM)_withnotes.tex
+
+web: $(STEM).pdf $(STEM)_withnotes.pdf
+	scp $^ broman-10.biostat.wisc.edu:public_html/presentations/
