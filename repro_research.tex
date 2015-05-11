@@ -213,6 +213,66 @@ Your code and analyses will be easier to debug, maintain, and extend.
 \end{frame}
 
 
+\begin{frame}[c]{1. Everything with a script}
+
+\centering
+\large
+If you do something once, \\
+you'll do it 1000 times.
+
+\note{The most basic principle for reproducible research is: do
+  everything via code.
+
+  Downloading data from the web, converting an Excel file to CSV,
+  renaming columns/variables, omitting bad samples or data points...do
+  all of this with scripts.
+
+  You may be tempted to open up a data file and hand-edit. But if you
+  get a revised version of that file, you'll need to do it again. And
+  it'll be harder to figure out what it was that you did.
+
+  Some things are more cumbersome via code, but in the long run you'll
+  save time.
+}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile,c]{2. Organize your data \& code}
+
+\begin{center}
+\begin{minipage}[c]{10.3cm}
+\begin{semiverbatim}
+\lstset{basicstyle=\normalsize}
+\begin{lstlisting}[linewidth=10.3cm]
+RawData/              ReadMe.txt
+DataSummary/          ToDo.txt
+DerivedData/          Makefile
+
+Python/               Notes/
+R/                    Refs/
+Ruby/
+\end{lstlisting}
+\end{semiverbatim}
+\end{minipage}
+\end{center}
+
+\note{You don't {\nhilit need} to be organized, but it sure will help
+  others (or yourself, later), when you try to figure out what it was
+  that you did.
+
+  Segregate all the materials for a project in one directory/folder on
+  your harddrive.
+
+  I prefer to separate raw data from processed data, and I put code in
+  a separate file.
+
+  Write {\tt ReadMe} files to explain what's what.
+}
+\end{frame}
+
+
 \begin{frame}[c]{}
 
 \centering
@@ -222,6 +282,44 @@ don't reply to emails.
 \note{I heard this from Paul Wilson, UW-Madison.
 }
 \end{frame}
+
+
+
+\begin{frame}[fragile,c]{3. Automate the process (GNU Make)}
+
+\begin{semiverbatim}
+\begin{lstlisting}
+rqtlexper.pdf: rqtlexper.tex rqtlexper.bib fig1.pdf fig2.pdf
+    pdflatex rqtlexper
+    bibtex rqtlexper
+    pdflatex rqtlexper
+    pdflatex rqtlexper
+
+rqtlexper.tex: rqtlexper.Rnw Data/lines_code_detail.txt
+    R -e 'library(knitr);knit("rqtlexper.Rnw")'
+
+fig1.pdf: R/create_fig1.R
+    cd R;R CMD BATCH create_fig1.R
+
+fig2.pdf: R/create_fig2.R Data/nlines_by_ver.csv
+    cd R;R CMD BATCH rqtl_lines_code.R
+
+Data/nlines_by_ver.csv: Python/grab_lines.py Data/versions.txt
+    Python/grab_lines_code.py
+\end{lstlisting}
+\end{semiverbatim}
+
+\note{GNU Make is an old (and rather quirky) tool for automating the
+  process of building computer programs. But it's useful much more
+  broadly, and I find it valuable for automating the full process of
+  data file manipulation, data cleaning, and analysis.
+
+  In addition to {\nhilit automating} a complex process, it also
+  {\nhilit documents} the process, including the dependencies among
+  data files and scripts.
+}
+\end{frame}
+
 
 
 
