@@ -335,8 +335,14 @@ Data/nlines_by_ver.csv: Python/grab_lines.py Data/versions.txt
 \begin{frame}[c]{4. Turn scripts into reproducible reports}
 
 
-\only<1|handout 0>{\figw{Figs/example_Rmd.png}{0.92}}
-\only<2>{\figw{Figs/example_Rmd_source.png}{0.92}}
+\vspace*{8mm}
+
+\figw{Figs/example_Rmd.png}{0.92}
+\onslide<2>{
+  \vspace*{-0.45\textheight}
+  \hspace*{0.05\textwidth}
+  \figw{Figs/example_Rmd_source.png}{0.92}
+}
 
 \note{I {\nhilit love} R Markdown for making reproducible reports that
   document the full details of my analysis. R Markdown mixes Markdown
@@ -357,7 +363,13 @@ Data/nlines_by_ver.csv: Python/grab_lines.py Data/versions.txt
 # Python
 def read_genotypes (filename):
     "Read matrix of genotype data"
+\end{lstlisting}
+\end{semiverbatim}
 
+\vspace*{-8mm}
+
+\begin{semiverbatim}
+\begin{lstlisting}
 # R
 plot_genotypes <-
 function(genotypes, ...)
@@ -390,16 +402,40 @@ function(genotypes, ...)
 
 \begin{frame}[c]{7. Use version control (git/GitHub)}
 
+\vspace*{3mm}
 
 \centering
 
 % comic from http://www.phdcomics.com/comics/archive.php?comicid=1531
 \only<1|handout 0>{\figh{Figs/phd101212s.png}{0.8}}
 
-\only<2|handout 0>{\figh{Figs/example_repo}{0.80}}
-\only<3|handout 0>{\figh{Figs/example_repo_zoom}{0.55}}
-\only<4>{\figh{Figs/example_history}{0.80}}
-\only<5>{\figh{Figs/example_commit}{0.80}}
+\end{frame}
+
+
+\begin{frame}[c]{7. Use version control (git/GitHub)}
+
+\only<1>{\addtocounter{framenumber}{-1}}
+
+\centering
+
+\only<1-2|handout 0>{\figh{Figs/example_repo}{0.80}}
+\onslide<2|handout 0>{
+  \vspace{-0.65\textheight}
+  \figh{Figs/example_repo_zoom}{0.55}
+}
+\end{frame}
+
+
+\begin{frame}[c]{7. Use version control (git/GitHub)}
+
+\only<1>{\addtocounter{framenumber}{-1}}
+
+\vspace*{3mm}
+
+\centering
+
+\only<1|handout 0>{\figh{Figs/example_history}{0.80}}
+\only<2>{\figh{Figs/example_commit}{0.80}}
 
 \note{
 }
