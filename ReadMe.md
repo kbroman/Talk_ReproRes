@@ -4,6 +4,10 @@ These are slides for a talk that I will give
 for the Molecular Microbial Ecology and Evolution (MoMiEE) group at
 UW-Madison on 11 May 2015.
 
+The compiled slides:
+[pdf](https://www.biostat.wisc.edu/~kbroman/presentations/repro_research.pdf) |
+[pdf with notes](https://www.biostat.wisc.edu/~kbroman/presentations/repro_research_withnotes.pdf)
+
 ---
 
 To the extent possible under law,
