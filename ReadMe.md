@@ -1,6 +1,6 @@
 ## Talk on &ldquo;Reproducible research&rdquo;
 
-These are slides for a talk that I will give
+These are slides for a talk that I gave
 for the Molecular Microbial Ecology and Evolution (MoMiEE) group at
 UW-Madison on 11 May 2015.
 
