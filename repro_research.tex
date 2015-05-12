@@ -330,10 +330,10 @@ fig1.pdf: R/create_fig1.R
     cd R;R CMD BATCH create_fig1.R
 
 fig2.pdf: R/create_fig2.R Data/nlines_by_ver.csv
-    cd R;R CMD BATCH rqtl_lines_code.R
+    cd R;R CMD BATCH create_fig2.R
 
 Data/nlines_by_ver.csv: Python/grab_lines.py Data/versions.txt
-    Python/grab_lines_code.py
+    Python/grab_lines.py
 \end{lstlisting}
 \end{semiverbatim}
 
