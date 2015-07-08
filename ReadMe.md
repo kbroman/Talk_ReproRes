@@ -1,16 +1,16 @@
 ## Talk on &ldquo;Reproducible research&rdquo;
 
-These are slides for a talk that I gave
-for the Molecular Microbial Ecology and Evolution (MoMiEE) group at
-UW-Madison on 11 May 2015.
-
-Also given (after small modifications) at the annual retreat for the
+These are slides for a talk that I gave for the Molecular Microbial
+Ecology and Evolution (MoMiEE) group at UW-Madison on 11 May 2015, at
+the annual retreat for the
 [Center for Genome Dynamics](http://cgd.jax.org/),
-[Jackson Lab](http://www.jax.org/), 28 May 2015.
+[Jackson Lab](http://www.jax.org/), 28 May 2015, and for the
+[Summer Institute for Training in Biostatistics (SIBS)](https://www.biostat.wisc.edu/content/summer-institute-training-biostatistics-sibs)
+at UW-Madison, on 9 July 2015. It was revised a bit each time.
 
 The compiled slides:
-[pdf](https://www.biostat.wisc.edu/~kbroman/presentations/repro_research.pdf) |
-[pdf with notes](https://www.biostat.wisc.edu/~kbroman/presentations/repro_research_withnotes.pdf)
+[pdf](https://www.biostat.wisc.edu/~kbroman/presentations/repro_research_SIBS2015.pdf) |
+[pdf with notes](https://www.biostat.wisc.edu/~kbroman/presentations/repro_research_SIBS2015_withnotes.pdf)
 
 ---
 
