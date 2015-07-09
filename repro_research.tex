@@ -312,23 +312,14 @@ Ruby/
 
 \begin{semiverbatim}
 \begin{lstlisting}
-rqtlexper.pdf: rqtlexper.tex rqtlexper.bib fig1.pdf fig2.pdf
-    pdflatex rqtlexper
-    bibtex rqtlexper
-    pdflatex rqtlexper
-    pdflatex rqtlexper
+R/analysis.html: R/analysis.Rmd Data/cleandata.csv
+    cd R;R -e "rmarkdown::render('analysis.Rmd')"
 
-rqtlexper.tex: rqtlexper.Rnw Data/lines_code_detail.txt
-    R -e 'library(knitr);knit("rqtlexper.Rnw")'
+Data/cleandata.csv: R/prepData.R RawData/rawdata.csv
+    cd R;R CMD BATCH prepData.R
 
-fig1.pdf: R/create_fig1.R
-    cd R;R CMD BATCH create_fig1.R
-
-fig2.pdf: R/create_fig2.R Data/nlines_by_ver.csv
-    cd R;R CMD BATCH create_fig2.R
-
-Data/nlines_by_ver.csv: Python/grab_lines.py Data/versions.txt
-    Python/grab_lines.py
+RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
+    Python/xls2csv.py RawData/rawdata.xls > RawData/rawdata.csv
 \end{lstlisting}
 \end{semiverbatim}
 
