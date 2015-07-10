@@ -356,6 +356,8 @@ RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
 
   With these informal reports, I seek to fully capture the entirety of
   my data explorations and decisions.
+
+  Python people should look at iPython notebooks.
 }
 \end{frame}
 
@@ -384,11 +386,12 @@ function(genotypes, ...)
   Don't repeat yourself
 
   \note{It's surprisingly easy to create an R package (see
-    {\tt http://kbroman.org/pkg\_primer}).
+    {\tt http://kbroman.org/pkg\_primer}) and it's even easier to make
+    a Python module.
 
     When writing functions, try to write them in a somewhat-general
-    way and then pull them out of the project as separate package,
-    so that you (and/or others) may reuse them for other purposes.
+    way and then pull them out of the project as separate package or
+    module, so that you (and/or others) may reuse them for other purposes.
 }
 \end{frame}
 
@@ -483,7 +486,7 @@ function(genotypes, ...)
   \item Automate the process (GNU Make)
   \item Turn scripts into reproducible reports
   \item Turn repeated code into functions
-  \item Create a package
+  \item Create a package/module
   \item Use version control (git/GitHub)
   \item Pick a license, any license
   \end{enumerate}
