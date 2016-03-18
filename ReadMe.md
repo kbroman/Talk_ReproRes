@@ -10,9 +10,10 @@ at UW-Madison on 9 July 2015, at the
 [Division of Biostatistics](https://www.uthsc.edu/prevmed/biostats.php),
 [Department of Preventive Medicine](https://www.uthsc.edu/prevmed),
 [University of Tennessee Health Science Center](http://uthsc.edu),
-Memphis, TN, on 4 Nov 2015, and in the
+Memphis, TN, on 4 Nov 2015, in the
 [Holz Brown Bag seminar series on Research Data Management](http://researchdata.wisc.edu/holz-series/)
-at UW-Madison on 18 Nov 2015. It was revised a bit each time.
+at UW-Madison on 18 Nov 2015, and at a Chicago ASA Chapter meeting on
+Reproducible Research on 1 Apr 2016.  It was revised a bit each time.
 
 The compiled slides:
 [pdf](https://www.biostat.wisc.edu/~kbroman/presentations/repro_research_SIBS2015.pdf) |
