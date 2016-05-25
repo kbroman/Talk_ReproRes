@@ -227,7 +227,65 @@ Reproducible
 \end{frame}
 
 
-\begin{frame}[c]{1. Everything with a script}
+\begin{frame}[c]{1. Organize your data \& code}
+
+\begin{center}
+\large
+\only<1|handout:0>{
+File organization and naming \\
+are powerful weapons against chaos.
+}
+\only<2>{
+Your closest collaborator is you six months ago, \\
+but you don't reply to emails.
+}
+\end{center}
+
+\hfill
+{\lolit
+\only<1|handout:0>{{\textendash} \href{http://www.stat.ubc.ca/~jenny/}{Jenny Bryan}}
+\only<2>{(paraphrasing \href{https://twitter.com/kcranstn/status/370914072511791104}{Mark Holder})}
+}
+
+\note{The first thing to do is to make your project
+  understandable to others (or yourself, later, when you try to figure
+  out what it was that you did.
+
+  Segregate all the materials for a project in one directory/folder on
+  your harddrive.
+
+  I prefer to separate raw data from processed data, and I put code in
+  a separate directory.
+
+  Write {\tt ReadMe} files to explain what's what.
+}
+\end{frame}
+
+
+\begin{frame}<handout:0>[fragile,c]{1. Organize your data \& code}
+
+\only<1>{\addtocounter{framenumber}{-1}}
+
+\begin{center}
+\begin{minipage}[c]{10.3cm}
+\begin{semiverbatim}
+\lstset{basicstyle=\normalsize}
+\begin{lstlisting}[linewidth=10.3cm]
+RawData/              Notes/
+DerivedData/          Refs/
+
+Python/               ReadMe.txt
+R/                    ToDo.txt
+Ruby/                 Makefile
+\end{lstlisting}
+\end{semiverbatim}
+\end{minipage}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}[c]{2. Everything with a script}
 
 \centering
 \large
@@ -251,64 +309,6 @@ you'll do it 1000 times.
 \end{frame}
 
 
-
-
-\begin{frame}[c]{2. Organize your data \& code}
-
-\begin{center}
-\large
-\only<1|handout:0>{
-File organization and naming \\
-are powerful weapons against chaos.
-}
-\only<2>{
-Your closest collaborator is you six months ago, \\
-but you don't reply to emails.
-}
-\end{center}
-
-\hfill
-{\lolit
-\only<1|handout:0>{{\textendash} \href{http://www.stat.ubc.ca/~jenny/}{Jenny Bryan}}
-\only<2>{(paraphrasing \href{https://twitter.com/kcranstn/status/370914072511791104}{Mark Holder})}
-}
-
-\note{You don't {\nhilit need} to be organized, but it sure will help
-  others (or yourself, later), when you try to figure out what it was
-  that you did.
-
-  Segregate all the materials for a project in one directory/folder on
-  your harddrive.
-
-  I prefer to separate raw data from processed data, and I put code in
-  a separate directory.
-
-  Write {\tt ReadMe} files to explain what's what.
-}
-\end{frame}
-
-
-\begin{frame}<handout:0>[fragile,c]{2. Organize your data \& code}
-
-\only<1>{\addtocounter{framenumber}{-1}}
-
-\begin{center}
-\begin{minipage}[c]{10.3cm}
-\begin{semiverbatim}
-\lstset{basicstyle=\normalsize}
-\begin{lstlisting}[linewidth=10.3cm]
-RawData/              Notes/
-DerivedData/          Refs/
-
-Python/               ReadMe.txt
-R/                    ToDo.txt
-Ruby/                 Makefile
-\end{lstlisting}
-\end{semiverbatim}
-\end{minipage}
-\end{center}
-
-\end{frame}
 
 
 \begin{frame}[fragile,c]{3. Automate the process (GNU Make)}
@@ -547,8 +547,8 @@ will be reproducible.
 
   \begin{enumerate}
   \itemsep12pt
-  \item Everything with a script
   \item Organize your data \& code
+  \item Everything with a script
   \item Automate the process (GNU Make)
   \item Turn scripts into reproducible reports
   \item Turn repeated code into functions
