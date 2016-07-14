@@ -300,9 +300,9 @@ you'll do it 1000 times.
 \begin{frame}[fragile,c]{3. Automate the process (GNU Make)}
 
 \begin{semiverbatim}
-\begin{lstlisting}
-R/analysis.html: R/analysis.Rmd Data/cleandata.csv
-    cd R;R -e "rmarkdown::render('analysis.Rmd')"
+\begin{lstlisting}[escapechar=!]
+!{\color{white}{R/analysis.html}}!: !{\color{white}{R/analysis.Rmd Data/cleandata.csv}}!
+!{\color{white}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}!
 
 Data/cleandata.csv: R/prepData.R RawData/rawdata.csv
     cd R;R CMD BATCH prepData.R
@@ -331,8 +331,8 @@ RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
 
 \begin{semiverbatim}
 \begin{lstlisting}[escapechar=!]
-!{\color{hilit}{R/analysis.html}}!: R/analysis.Rmd Data/cleandata.csv
-    cd R;R -e "rmarkdown::render('analysis.Rmd')"
+!{\color{hilit}{R/analysis.html}}!: !{\color{white}{R/analysis.Rmd Data/cleandata.csv}}!
+!{\color{white}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}!
 
 Data/cleandata.csv: R/prepData.R RawData/rawdata.csv
     cd R;R CMD BATCH prepData.R
@@ -352,8 +352,8 @@ RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
 
 \begin{semiverbatim}
 \begin{lstlisting}[escapechar=!]
-R/analysis.html: !{\color{hilit}{R/analysis.Rmd Data/cleandata.csv}}!
-    cd R;R -e "rmarkdown::render('analysis.Rmd')"
+!{\color{white}{R/analysis.html}}!: !{\color{hilit}{R/analysis.Rmd Data/cleandata.csv}}!
+!{\color{white}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}!
 
 Data/cleandata.csv: R/prepData.R RawData/rawdata.csv
     cd R;R CMD BATCH prepData.R
@@ -372,7 +372,7 @@ RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
 
 \begin{semiverbatim}
 \begin{lstlisting}[escapechar=!]
-R/analysis.html: R/analysis.Rmd Data/cleandata.csv
+!{\color{white}{R/analysis.html}}!: !{\color{white}{R/analysis.Rmd Data/cleandata.csv}}!
 !{\color{hilit}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}}!
 
 Data/cleandata.csv: R/prepData.R RawData/rawdata.csv
