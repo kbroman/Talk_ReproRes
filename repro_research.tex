@@ -1,4 +1,4 @@
-\documentclass[12pt,t]{beamer}
+\documentclass[aspectratio=169,12pt,t]{beamer}
 \usepackage{graphicx}
 \setbeameroption{hide notes}
 \setbeamertemplate{note page}[plain]
@@ -299,8 +299,10 @@ you'll do it 1000 times.
 
 \begin{frame}[fragile,c]{3. Automate the process (GNU Make)}
 
+\begin{center}
+\begin{minipage}[c]{10.8cm}
 \begin{semiverbatim}
-\begin{lstlisting}[escapechar=!]
+\begin{lstlisting}[escapechar=!,linewidth=10.8cm]
 !{\color{white}{R/analysis.html}}!: !{\color{white}{R/analysis.Rmd Data/cleandata.csv}}!
 !{\color{white}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}!
 
@@ -311,6 +313,8 @@ RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
     Python/xls2csv.py RawData/rawdata.xls > RawData/rawdata.csv
 \end{lstlisting}
 \end{semiverbatim}
+\end{minipage}
+\end{center}
 
 \note{GNU Make is an old (and rather quirky) tool for automating the
   process of building computer programs. But it's useful much more
@@ -329,8 +333,10 @@ RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
 
 \addtocounter{framenumber}{-1}
 
+\begin{center}
+\begin{minipage}[c]{10.8cm}
 \begin{semiverbatim}
-\begin{lstlisting}[escapechar=!]
+\begin{lstlisting}[escapechar=!,linewidth=10.8cm]
 !{\color{hilit}{R/analysis.html}}!: !{\color{white}{R/analysis.Rmd Data/cleandata.csv}}!
 !{\color{white}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}!
 
@@ -341,6 +347,8 @@ RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
     Python/xls2csv.py RawData/rawdata.xls > RawData/rawdata.csv
 \end{lstlisting}
 \end{semiverbatim}
+\end{minipage}
+\end{center}
 
 \end{frame}
 
@@ -350,8 +358,10 @@ RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
 
 \addtocounter{framenumber}{-1}
 
+\begin{center}
+\begin{minipage}[c]{10.8cm}
 \begin{semiverbatim}
-\begin{lstlisting}[escapechar=!]
+\begin{lstlisting}[escapechar=!,linewidth=10.8cm]
 !{\color{white}{R/analysis.html}}!: !{\color{hilit}{R/analysis.Rmd Data/cleandata.csv}}!
 !{\color{white}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}!
 
@@ -362,6 +372,8 @@ RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
     Python/xls2csv.py RawData/rawdata.xls > RawData/rawdata.csv
 \end{lstlisting}
 \end{semiverbatim}
+\end{minipage}
+\end{center}
 \end{frame}
 
 
@@ -370,8 +382,10 @@ RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
 
 \addtocounter{framenumber}{-1}
 
+\begin{center}
+\begin{minipage}[c]{10.8cm}
 \begin{semiverbatim}
-\begin{lstlisting}[escapechar=!]
+\begin{lstlisting}[escapechar=!,linewidth=10.8cm]
 !{\color{white}{R/analysis.html}}!: !{\color{white}{R/analysis.Rmd Data/cleandata.csv}}!
 !{\color{hilit}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}}!
 
@@ -382,6 +396,8 @@ RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
     Python/xls2csv.py RawData/rawdata.xls > RawData/rawdata.csv
 \end{lstlisting}
 \end{semiverbatim}
+\end{minipage}
+\end{center}
 \end{frame}
 
 
@@ -416,18 +432,26 @@ RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
 
 \begin{frame}[fragile,c]{5. Turn repeated code into functions}
 
+\begin{center}
+\begin{minipage}[c]{10.8cm}
 \begin{semiverbatim}
-\begin{lstlisting}
+\lstset{basicstyle=\large}
+\begin{lstlisting}[linewidth=10.8cm]
 # Python
 def read_genotypes (filename):
     "Read matrix of genotype data"
 \end{lstlisting}
 \end{semiverbatim}
+\end{minipage}
+\end{center}
 
 \vspace*{-8mm}
 
+\begin{center}
+\begin{minipage}[c]{10.8cm}
 \begin{semiverbatim}
-\begin{lstlisting}
+\lstset{basicstyle=\large}
+\begin{lstlisting}[linewidth=10.8cm]
 # R
 plot_genotypes <-
 function(genotypes, ...)
@@ -435,6 +459,8 @@ function(genotypes, ...)
 }
 \end{lstlisting}
 \end{semiverbatim}
+\end{minipage}
+\end{center}
 
 \note{Pull out complex or repeated code as a separate function.
   This makes your code easier to read and maintain.}
