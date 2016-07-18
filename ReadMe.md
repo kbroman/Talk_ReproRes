@@ -21,6 +21,8 @@ These are slides for a talk that I gave for
   at UW-Madison on 25 May 2016
 - [Computational Biology and Biostatistics Summer Research Program (CBB)](https://www.biostat.wisc.edu/content/computational-biology-and-biostatistics-summer-research-program-cbb),
   at UW-Madison on 7 June 2016
+- [The Allied Genetics Conference](http://www.genetics2016.org/) in
+  Orlando, Florida, on 16 July 2016
 
 It was revised a bit each time.
 
