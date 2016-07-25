@@ -23,12 +23,14 @@ These are slides for a talk that I gave for
   at UW-Madison on 7 June 2016
 - [The Allied Genetics Conference](http://www.genetics2016.org/) in
   Orlando, Florida, on 16 July 2016
+- [Joint Statistics Meetings](https://www.amstat.org/meetings/jsm/2016/)
+  in Chicago, Illinois, on 3 Aug 2016
 
 It was revised a bit each time.
 
 The compiled slides:
-[pdf](https://www.biostat.wisc.edu/~kbroman/presentations/repro_research_CBB2016.pdf) |
-[pdf with notes](https://www.biostat.wisc.edu/~kbroman/presentations/repro_research_CBB2016_withnotes.pdf)
+[pdf](https://www.biostat.wisc.edu/~kbroman/presentations/repro_research_JSM2016.pdf) |
+[pdf with notes](https://www.biostat.wisc.edu/~kbroman/presentations/repro_research_JSM2016_withnotes.pdf)
 
 ---
 
