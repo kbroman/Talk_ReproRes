@@ -337,8 +337,8 @@ RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
 \begin{minipage}[c]{10.8cm}
 \begin{semiverbatim}
 \begin{lstlisting}[escapechar=!,linewidth=10.8cm]
-!{\color{hilit}{R/analysis.html}}!: !{\color{white}{R/analysis.Rmd Data/cleandata.csv}}!
-!{\color{white}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}!
+!{\color{codehilit}{R/analysis.html}}!: !{\color{foreground}{R/analysis.Rmd Data/cleandata.csv}}!
+!{\color{foreground}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}!
 
 Data/cleandata.csv: R/prepData.R RawData/rawdata.csv
     cd R;R CMD BATCH prepData.R
@@ -362,8 +362,8 @@ RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
 \begin{minipage}[c]{10.8cm}
 \begin{semiverbatim}
 \begin{lstlisting}[escapechar=!,linewidth=10.8cm]
-!{\color{white}{R/analysis.html}}!: !{\color{hilit}{R/analysis.Rmd Data/cleandata.csv}}!
-!{\color{white}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}!
+!{\color{foreground}{R/analysis.html}}!: !{\color{codehilit}{R/analysis.Rmd Data/cleandata.csv}}!
+!{\color{foreground}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}!
 
 Data/cleandata.csv: R/prepData.R RawData/rawdata.csv
     cd R;R CMD BATCH prepData.R
@@ -386,8 +386,8 @@ RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
 \begin{minipage}[c]{10.8cm}
 \begin{semiverbatim}
 \begin{lstlisting}[escapechar=!,linewidth=10.8cm]
-!{\color{white}{R/analysis.html}}!: !{\color{white}{R/analysis.Rmd Data/cleandata.csv}}!
-!{\color{hilit}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}}!
+!{\color{foreground}{R/analysis.html}}!: !{\color{foreground}{R/analysis.Rmd Data/cleandata.csv}}!
+!{\color{codehilit}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}}!
 
 Data/cleandata.csv: R/prepData.R RawData/rawdata.csv
     cd R;R CMD BATCH prepData.R
@@ -560,7 +560,7 @@ function(genotypes, ...)
 !{\color{white}{batches_final.RData                    kidney_mlratio_final.RData}!
 !{\color{white}{batches_raw_final.RData                kidney_mlratio_nqrank_final.RData}!
 !{\color{white}{cpl_final.RData                        kidney_prcomp.RData}!
-!{\color{white}{d2o_final.RData                       }!!{\color{hilit} lipomics_final_rev2.RData}!
+!{\color{white}{d2o_final.RData                       }!!{\color{vhilit} lipomics_final_rev2.RData}!
 !{\color{white}{gastroc_int1_final.RData               liverTG_final.RData}!
 !{\color{white}{gastroc_int2_final.RData               liver_int1_final.RData}!
 !{\color{white}{gastroc_mlratio_final.RData            liver_int2_final.RData}!
@@ -568,10 +568,10 @@ function(genotypes, ...)
 !{\color{white}{gastroc_prcomp.RData                   liver_mlratio_nqrank_final.RData}!
 !{\color{white}{hypo_int1_final.RData                  liver_prcomp.RData}!
 !{\color{white}{hypo_int2_final.RData                  mirna_final.RData}!
-!{\color{white}{hypo_mlratio_final.RData              }!!{\color{hilit} necropsy_final_rev2.RData}!
-!{\color{hilit}{hypo_mlratio_final_old.RData           plasmaurine_final_rev.RData}!
+!{\color{white}{hypo_mlratio_final.RData              }!!{\color{vhilit} necropsy_final_rev2.RData}!
+!{\color{vhilit}{hypo_mlratio_final_old.RData           plasmaurine_final_rev.RData}!
 !{\color{white}{hypo_mlratio_nqrank_final.RData        pmark.RData}!
-!{\color{hilit}{hypo_mlratio_nqrank_final_old.RData   }!!{\color{white} rbm_final.RData}!
+!{\color{vhilit}{hypo_mlratio_nqrank_final_old.RData   }!!{\color{white} rbm_final.RData}!
 !{\color{white}{hypo_omit.RData}!
 \end{lstlisting}
 \end{semiverbatim}
