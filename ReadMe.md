@@ -25,6 +25,8 @@ These are slides for a talk that I gave for
   Orlando, Florida, on 16 July 2016
 - [Joint Statistics Meetings](https://www.amstat.org/meetings/jsm/2016/)
   in Chicago, Illinois, on 3 Aug 2016
+- [ASA web-based seminar](http://www.amstat.org/ASA/Education/Web-Based-Lectures.aspx#TRR)
+  on 16 Nov 2016
 
 It was revised a bit each time.
 
