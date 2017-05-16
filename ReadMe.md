@@ -27,6 +27,9 @@ These are slides for a talk that I gave for
   in Chicago, Illinois, on 3 Aug 2016
 - [ASA web-based seminar](http://www.amstat.org/ASA/Education/Web-Based-Lectures.aspx#TRR)
   on 16 Nov 2016
+- Jackson Lab
+  [course on Big Genomic Data](https://www.jax.org/education-and-learning/education-calendar/2017/may/graduate-big-genomic-data-skills-training-for-professors#)
+  on 17 May 2017
 
 It was revised a bit each time.
 
