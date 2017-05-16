@@ -604,6 +604,20 @@ function(genotypes, ...)
 
 
 
+\begin{frame}<handout:0>[c]{7. Use version control (git/GitHub)}
+
+\only<1>{\addtocounter{framenumber}{-1}}
+
+\centering
+
+\only<1-2>{\figh{Figs/example_repo}{0.80}}
+\onslide<2>{
+  \vspace{-0.65\textheight}
+  \figh{Figs/example_repo_zoom}{0.55}
+}
+\end{frame}
+
+
 \begin{frame}[c]{7. Use version control (git/GitHub)}
 
 \only<1>{\addtocounter{framenumber}{-1}}
@@ -612,7 +626,8 @@ function(genotypes, ...)
 
 \centering
 
-\figh{Figs/example_commit}{0.80}
+\only<1|handout 0>{\figh{Figs/example_history}{0.80}}
+\only<2>{\figh{Figs/example_commit}{0.80}}
 
 \note{
   git has a steep learning curve, but ultimately I think you'll find
