@@ -15,5 +15,5 @@ $(STEM)_withnotes.tex: $(STEM).tex Ruby/createVersionWithNotes.rb
 	Ruby/createVersionWithNotes.rb $(STEM).tex $(STEM)_withnotes.tex
 
 web: $(STEM).pdf $(STEM)_withnotes.pdf
-	scp $(STEM).pdf broman-10.biostat.wisc.edu:Website/presentations/$(STEM)_JAX2017.pdf
-	scp $(STEM)_withnotes.pdf broman-10.biostat.wisc.edu:Website/presentations/$(STEM)_JAX2017_withnotes.pdf
+	scp $(STEM).pdf broman-10.biostat.wisc.edu:Website/presentations/$(STEM)_BDS2017.pdf
+	scp $(STEM)_withnotes.pdf broman-10.biostat.wisc.edu:Website/presentations/$(STEM)_BDS2017_withnotes.pdf
