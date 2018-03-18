@@ -32,12 +32,13 @@ These are slides for a talk that I gave for
   on 17 May 2017
 - [Summer Research Program in Biomedical Data Science](https://www.biostat.wisc.edu/content/summer-research)
   at UW-Madison on 7 June 2017
+- [David O'Connor's lab](http://labs.pathology.wisc.edu/oconnor/) at UW-Madison on 19 March 2018
 
 It was revised a bit each time.
 
 The compiled slides:
-[pdf](https://www.biostat.wisc.edu/~kbroman/presentations/repro_research_BDS2017.pdf) |
-[pdf with notes](https://www.biostat.wisc.edu/~kbroman/presentations/repro_research_BDS2017_withnotes.pdf)
+[pdf](https://www.biostat.wisc.edu/~kbroman/presentations/steps2rr.pdf)
+[pdf with notes](https://www.biostat.wisc.edu/~kbroman/presentations/steps2rr_withnotes.pdf)
 
 ---
 
