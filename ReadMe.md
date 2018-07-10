@@ -33,6 +33,8 @@ These are slides for a talk that I gave for
 - [Summer Research Program in Biomedical Data Science](https://www.biostat.wisc.edu/content/summer-research)
   at UW-Madison on 7 June 2017
 - [David O'Connor's lab](http://labs.pathology.wisc.edu/oconnor/) at UW-Madison on 19 March 2018
+- [Summer Research Program in Biomedical Data Science](https://www.biostat.wisc.edu/content/summer-research)
+  at UW-Madison on 11 July 2018
 
 It was revised a bit each time.
 
