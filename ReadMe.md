@@ -39,7 +39,7 @@ These are slides for a talk that I gave for
 It was revised a bit each time.
 
 The compiled slides:
-[pdf](https://www.biostat.wisc.edu/~kbroman/presentations/steps2rr.pdf)
+[pdf](https://www.biostat.wisc.edu/~kbroman/presentations/steps2rr.pdf) |
 [pdf with notes](https://www.biostat.wisc.edu/~kbroman/presentations/steps2rr_withnotes.pdf)
 
 ---
