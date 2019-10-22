@@ -16,7 +16,7 @@ ifile.readlines.each do |z|
   end
 
   if do_2nd_sub and /\\documentclass\[aspectratio=169,12pt,t\]{beamer}/ =~ z
-    z = z.sub("[aspectratio=169,12pt,t]", "[12pt,t,handout]")
+    z = z.sub("[aspectratio=169,12pt,t]", "[aspectratio=169,12pt,t,handout]")
     do_2nd_sub = false
   end
 
