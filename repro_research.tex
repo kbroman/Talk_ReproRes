@@ -1,4 +1,4 @@
-\documentclass[12pt,t]{beamer}
+\documentclass[aspectratio=169,12pt,t]{beamer}
 \usepackage{graphicx}
 \setbeameroption{hide notes}
 \setbeamertemplate{note page}[plain]
@@ -33,15 +33,23 @@
 \frame{
   \titlepage
 
-  \vfill \hfill \includegraphics[height=6mm]{Figs/cc-zero.png} \vspace*{-1cm}
+  \vfill \hfill \includegraphics[height=6mm]{Figs/cc-zero.png} \vspace*{-3mm}
 
   \note{These are slides for a talk I've given a whole bunch of times,
-    most recently for the Summer Research Program in Biomedical Data
-    Science at UW-Madison on 11 July 2018.
+    most recently for MD/PhD students at UW-Madison on 28 Oct 2019.
 
     Source: {\tt https://github.com/kbroman/Talk\_ReproRes} \\
-    Slides: {\tt https://bit.ly/steps2rr\_nonotes} \\
-    With notes: {\tt https://bit.ly/steps2rr}
+    These slides, with notes: {\tt https://bit.ly/steps2rr_nonotes} \\
+    Full slides without notes: {\tt https://bit.ly/steps2rr}
+
+    By ``reproducibly,'' I'm referring to ``computational
+    reproducibility,'' by which I mean that the data and code for a
+    project are packaged together in a way that they can be handed to
+    someone else, who can rerun the code and get the same
+    results---the same figures and tables. This is surprisingly hard
+    to do, and it's even more difficult in the context of a
+    collaboration between two or more data analysts.
+
 }
 } }
 
@@ -66,18 +74,31 @@
 \end{minipage}
 \end{center}
 
-\note{This is an edited version of an email I got from a collaborator,
+\note{I'm an applied statistician; my goal is to help people make
+  sense of their data. I have a lot of collaborators, and there's
+  nothing I enjoy more than puzzling over their data. So I write a lot of
+  reports, describing what I've done and what I've learned.
+
+  This is an email I got from a collaborator,
   in response to an analysis report that I had sent him.
+  It's always a bit of a shock to get an email like this: what have I
+  done? Why am I working with the wrong data, and where is the right data?
 
-  I try to always include some brief data summaries at the start of
-  such reports. By doing so, he immediately saw that I had an old
-  version of the data.
-
+  But what he didn't know is that by this point in my life, I'd
+  adopted a reproducible workflow.
   Because I'd set things up carefully, I could just substitute in the
-  newer dataset, type ``{\tt make}'', and get the revised report.
+  newer dataset, type a single command (``{\tt make}'') to rerun the
+  analyses, and get the revised report.
 
-  This is a reproducibility success story. But it took me a long
-  time to get to this point.
+  This is a reproducibility success story. We all make mistakes, but
+  if our projects are reproducible, we can nimbly recover from those
+  mistakes.
+
+  There is a second important lesson here: At the start of such
+  reports, I always include a paragraph about our shared goals, along
+  with some brief data summaries. By doing so, he immediately saw that
+  I had an old version of the data. If I hadn't done so, we might
+  never have discovered my error.
 }
 \end{frame}
 
@@ -90,17 +111,6 @@ correspond to those in Figure 2.}
 \note{My computational life is not entirely rosy. This is the sort of
   email that will freak me out.}
 \end{frame}
-
-
-\begin{frame}[c]{}
-\centerline{\Large In what order do I run these scripts?}
-
-\note{Sometimes the process of data file manipulation and data
-  cleaning gets spread across a bunch of scripts that need to be
-  executed in a particular order. Will I record this information? Is
-  it obvious what script does what?}
-\end{frame}
-
 
 
 \begin{frame}[c]{}
@@ -121,11 +131,30 @@ correspond to those in Figure 2.}
 
 
 \begin{frame}[c]{}
+\centerline{\Large Which image goes with which experiment?}
+
+\note{For experimental biologists, it can be tricky to keep track of
+  the vast set of images and experiments they perform.}
+\end{frame}
+
+
+
+\begin{frame}[c]{}
 \centerline{\Large How did I make that figure?}
 
 \note{Sometimes, in the midst of a bout of exploratory data analysis,
   I'll create some exciting graph and have a heck of a time
   reproducing it afterwards.}
+\end{frame}
+
+
+\begin{frame}[c]{}
+\centerline{\Large In what order do I run these scripts?}
+
+\note{Sometimes the process of data file manipulation and data
+  cleaning gets spread across a bunch of scripts that need to be
+  executed in a particular order. Will I record this information? Is
+  it obvious what script does what?}
 \end{frame}
 
 
@@ -135,7 +164,7 @@ correspond to those in Figure 2.}
 
 \note{It was working last week. Well, last month, at least.
 
-How easy is it to go back through that script's history to see where
+How easy is it to go back through that script's history to see when
 and why it stopped working?}
 \end{frame}
 
@@ -169,8 +198,10 @@ Reproducible
 \only<2 | handout 0>{Correct}
 
 \note{Computational work is
-  {\color{nhilit} reproducible} if one can take the data and code and produce
-  the same set of results. {\color{nhilit} Replicable} is more stringent: can
+  {\color{nhilit} reproducible} if the data and code are organized in
+  a way that they can be handed to someone else, who can rerun the
+  code and get the same results---the same figures and tables.
+  {\color{nhilit} Replicable} is more stringent: can
   someone repeat the experiment and get the same results?
 
   Reproducibility is a minimal standard. That something is
@@ -187,22 +218,57 @@ Reproducible
 
 
 
-\begin{frame}[c]{Steps toward reproducible research}
+\begin{frame}[c]{}
 
-  \centering
-  \Large
+   \centerline{\Large \href{https://kbroman.org/steps2rr}{\tt \color{title}
+      kbroman.org/steps2rr}}
 
-  \href{https://kbroman.org/steps2rr}{\tt \color{foreground} kbroman.org/steps2rr}
-
-\note{The above website contains my thoughts on how to move towards full
-  reproducibility.
-
-  Don't try to change every aspect of your workflow all at once.
+\note{It was a long, hard process for me to move from my old standard
+  practice to a fully reproducible workflow. In thinking through that
+  process, I wrote down my thoughts on the basic steps to take towards
+  full reproducibility. This forms the basis of what I'll present here.
 }
 \end{frame}
 
 
-\begin{frame}[c]{1. Organize your data \& code}
+\begin{frame}[c]{}
+
+\centering
+\large
+
+A little bit reproducible \\
+is better than not reproducible.
+
+\vspace{12mm}
+
+A little bit open \\
+is better than not open.
+
+\vspace{12mm}
+
+Strive to make each project \\
+a bit better organized than the last.
+
+\note{
+  While it's good to strive for full reproducibility, it can be difficult
+  to achieve. But partially reproducible is better than not-at-all
+  reproducible. Similarly, making data and code partially open is
+  better than nothing.
+
+  Don't try to change every aspect of your workflow all at once. Focus
+  on revising one aspect at a time. When you get to the end of a
+  project, you may be dissatisfied with the state of things, but don't
+  give up. Try to make each project a bit better organized and
+  reproducible than the last.
+}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{Organize your project}
 
 \begin{center}
 \large
@@ -214,7 +280,7 @@ are powerful weapons against chaos.
 Your closest collaborator is you six months ago, \\
 but you don't reply to emails.
 }
-\only<3>{Have sympathy for your future self.}
+\only<3|handout:0>{Have sympathy for your future self.}
 \end{center}
 
 \hfill
@@ -226,23 +292,13 @@ but you don't reply to emails.
 
 \note{The first thing to do is to make your project
   understandable to others (or yourself, later, when you try to figure
-  out what it was that you did.
-
-  Segregate all the materials for a project in one directory/folder on
-  your harddrive.
-
-  I prefer to separate raw data from processed data, and I put code in
-  a separate directory.
-
-  Write {\tt ReadMe} files to explain what's what.
+  out what it was that you did).
 }
 \end{frame}
 
 
 
-\begin{frame}<handout:0>[fragile,c]{1. Organize your data \& code}
-
-\only<1>{\addtocounter{framenumber}{-1}}
+\begin{frame}[fragile,c]{Organize your project}
 
 \begin{center}
 \begin{minipage}[c]{10.3cm}
@@ -255,17 +311,35 @@ DerivedData/          Refs/
 Python/               ReadMe.txt
 R/                    ToDo.txt
 Ruby/                 Makefile
+
+Analysis/
+Figures/
 \end{lstlisting}
 \end{semiverbatim}
 \end{minipage}
 \end{center}
 
+\note{
+  Segregate all the materials for a project in one directory/folder on
+  your hard drive.
+
+  There will be a lot of files. Organize them in a meaningful way.
+
+  This is the way I organize a project directory. The key principles
+  are to put everything related to a project in a common directory,
+  but then to separate data from code and separate raw data from
+  processed data.
+
+  Write {\tt ReadMe} files to explain what's what. Make sure they stay
+  current.
+}
+
 \end{frame}
 
 
-\begin{frame}<handout:0>[fragile,c]{Chaos}
 
-\addtocounter{framenumber}{-1}
+
+\begin{frame}[fragile,c]{Chaos}
 
 \begin{center}
 \begin{minipage}[c]{11.33cm}
@@ -292,238 +366,200 @@ Data4Tram/        PepIns_2012-02-09/
 \end{minipage}
 \end{center}
 
-\end{frame}
-
-
-\begin{frame}[c]{2. Everything with a script}
-
-\centering
-\large
-If you do something once, \\
-you'll do it 1000 times.
-
-\note{The most basic principle for reproducible research is: do
-  everything via code.
-
-  Downloading data from the web, converting an Excel file to CSV,
-  renaming columns/variables, omitting bad samples or data points...do
-  all of this with scripts.
-
-  You may be tempted to open up a data file and hand-edit. But if you
-  get a revised version of that file, you'll need to do it again. And
-  it'll be harder to figure out what it was that you did.
-
-  Some things are more cumbersome via code, but in the long run you'll
-  save time.
+\note{
+  This is a folder on my hard drive, for the project that led me to
+  reassess my life.
 }
+
 \end{frame}
 
 
-
-
-\begin{frame}[fragile,c]{3. Automate the process (GNU Make)}
+\begin{frame}[fragile,c]{Choose good names for things}
 
 \begin{center}
-\begin{minipage}[c]{10.8cm}
+\begin{minipage}[c]{13.7cm}
 \begin{semiverbatim}
-\begin{lstlisting}[escapechar=!,linewidth=10.8cm]
-!{\color{foreground}{R/analysis.html}}!: !{\color{foreground}{R/analysis.Rmd Data/cleandata.csv}}!
-!{\color{foreground}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}!
-
-Data/cleandata.csv: R/prepData.R RawData/rawdata.csv
-    cd R;R CMD BATCH prepData.R
-
-RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
-    Python/xls2csv.py RawData/rawdata.xls > RawData/rawdata.csv
+\lstset{basicstyle=\scriptsize}
+\begin{lstlisting}[linewidth=13.7cm]
+betw_tissue_corr.R     expr_scatterplot_allprobes.R  gve_similarity_alltissues.R
+coatcolor_lod.R        expr_scatterplots_dup.R       gve_similarity.R
+colors.R               expr_scatterplots_mix.R       gve_supp.R
+cover_fig.R            expr_scatterplots_swap.R      insulin_lod.R
+eqtl_counts_10.R       expr_swaps.R                  local_eqtl_locations.R
+eqtl_counts.R          func.R                        my_plot_map.R
+eve_hist.R             genotype_plates.R             my_plot_scanone.R
+eve_scheme.R           gve_hist.R                    sex_vs_X.R
+eve_similarity.R       gve_new.R                     xchr_fig.R
+eve_similarity_supp.R  gve.R                         xist_and_y.R
+expr_corr_dup.R        gve_scheme.R
+expr_corr_mix.R        gve_similarity_2ndbest.R
 \end{lstlisting}
 \end{semiverbatim}
 \end{minipage}
 \end{center}
 
-\note{GNU Make is an old (and rather quirky) tool for automating the
-  process of building computer programs. But it's useful much more
-  broadly, and I find it valuable for automating the full process of
-  data file manipulation, data cleaning, and analysis.
+\note{
+  You'll have a lot of files. In addition to organizing them in
+  subfolders, it's important to choose good names for them.
 
-  In addition to {\nhilit automating} a complex process, it also
-  {\nhilit documents} the process, including the dependencies among
-  data files and scripts.
+  These names of these files largely explain their contents, but
+  they're also left rather disorganized.
 }
+
 \end{frame}
 
 
-
-\begin{frame}<handout:0>[fragile,c]{3. Automate the process (GNU Make)}
-
-\addtocounter{framenumber}{-1}
+\begin{frame}[fragile,c]{Choose good names for things}
 
 \begin{center}
-\begin{minipage}[c]{10.8cm}
+\begin{minipage}[c]{8.3cm}
 \begin{semiverbatim}
-\begin{lstlisting}[escapechar=!,linewidth=10.8cm]
-!{\color{codehilit}{R/analysis.html}}!: !{\color{foreground}{R/analysis.Rmd Data/cleandata.csv}}!
-!{\color{foreground}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}!
-
-Data/cleandata.csv: R/prepData.R RawData/rawdata.csv
-    cd R;R CMD BATCH prepData.R
-
-RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
-    Python/xls2csv.py RawData/rawdata.xls > RawData/rawdata.csv
+\lstset{basicstyle=\normalsize}
+\begin{lstlisting}[linewidth=8.3cm]
+fig1.png        fig5.png
+fig10.png       fig6.png
+fig2.png        fig7.png
+fig3.png        fig8.png
+fig4.png        fig9.png
 \end{lstlisting}
 \end{semiverbatim}
 \end{minipage}
 \end{center}
 
-\end{frame}
+\note{
+  These names are well organized, but you have to remember the order
+  of all of the figures to find the one you want.
 
-
-
-\begin{frame}<handout:0>[fragile,c]{3. Automate the process (GNU Make)}
-
-\addtocounter{framenumber}{-1}
-
-\begin{center}
-\begin{minipage}[c]{10.8cm}
-\begin{semiverbatim}
-\begin{lstlisting}[escapechar=!,linewidth=10.8cm]
-!{\color{foreground}{R/analysis.html}}!: !{\color{codehilit}{R/analysis.Rmd Data/cleandata.csv}}!
-!{\color{foreground}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}!
-
-Data/cleandata.csv: R/prepData.R RawData/rawdata.csv
-    cd R;R CMD BATCH prepData.R
-
-RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
-    Python/xls2csv.py RawData/rawdata.xls > RawData/rawdata.csv
-\end{lstlisting}
-\end{semiverbatim}
-\end{minipage}
-\end{center}
-\end{frame}
-
-
-
-\begin{frame}<handout:0>[fragile,c]{3. Automate the process (GNU Make)}
-
-\addtocounter{framenumber}{-1}
-
-\begin{center}
-\begin{minipage}[c]{10.8cm}
-\begin{semiverbatim}
-\begin{lstlisting}[escapechar=!,linewidth=10.8cm]
-!{\color{foreground}{R/analysis.html}}!: !{\color{foreground}{R/analysis.Rmd Data/cleandata.csv}}!
-!{\color{codehilit}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}}!
-
-Data/cleandata.csv: R/prepData.R RawData/rawdata.csv
-    cd R;R CMD BATCH prepData.R
-
-RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
-    Python/xls2csv.py RawData/rawdata.xls > RawData/rawdata.csv
-\end{lstlisting}
-\end{semiverbatim}
-\end{minipage}
-\end{center}
-\end{frame}
-
-
-
-
-
-\begin{frame}[c]{4. Turn scripts into reproducible reports}
-
-
-\vspace*{8mm}
-
-\figw{Figs/example_Rmd.png}{0.92}
-\onslide<2>{
-  \vspace*{-0.45\textheight}
-  \hspace*{0.10\textwidth}
-  \figw{Figs/example_Rmd_source.png}{0.92}
+  And note that, alphabetically, figure 10 ends up between figure 1
+  and figure 2.
 }
 
-\note{I {\nhilit love} R Markdown for making reproducible reports that
-  document the full details of my analysis. R Markdown mixes Markdown
-  (for light-weight markup of text) and R code chunks; when processed
-  with knitr, the R code is executed and results inserted into the
-  final document.
+\end{frame}
 
-  With these informal reports, I seek to fully capture the entirety of
-  my data explorations and decisions.
 
-  Python people should look at iPython notebooks.
+
+
+
+
+\begin{frame}[c]{Choose good names for things}
+
+  \bbi
+  \item Machine readable
+    \bi
+    \item No spaces
+    \item No special characters except {\textunderscore} and
+      {\tt -}
+    \ei
+
+  \item Human readable
+    \bi
+    \item Explain the contents
+    \ei
+
+  \item Consistent
+    \bi
+      \item Name similar files in a similar way
+    \ei
+
+  \item Make use of computer's sorting
+    \bi
+      \item pad numbers with 0's (e.g., {\tt 01}, {\tt 02}, ...)
+      \item start with general grouping, then more specific
+      \item dates like {\tt 2019-05-14}
+    \ei
+
+  \ei
+
+\note{
+  You want the names to be easily to handle in software, which
+  generally means no spaces or special characters except for
+  underscore and hyphen (which are useful for separating words).
+
+  But you want the names to explain the files' contents, so that you
+  don't have to open the files to figure out what they are.
+
+  Consistency is important: if you have a bunch of similar files, you
+  should have some system for naming them.
+
+  And make use of the computer's sort of files, by padding numbers
+  with 0's (so that 10 appears after 9 rather than before 2) and
+  organizing the files into groups.
+
+  Dates should always be written as `YYYY-MM-DD`, so that when sorted
+  they are in order by date.
+}
+
+\end{frame}
+
+
+\begin{frame}[c]{}
+
+\vspace{24pt}
+
+\figh{Figs/iso_8601.png}{0.8}
+
+\vfill
+
+\hfill {\tt \footnotesize \lolit \href{http://xkcd.com/1179/}{xkcd.com/1179}}
+
+\note{Go with the xkcd format for writing dates, for ease of sorting.
 }
 \end{frame}
 
 
-\begin{frame}[fragile,c]{5. Turn repeated code into functions}
+\begin{frame}[fragile,c]{Choose good names for things}
 
 \begin{center}
-\begin{minipage}[c]{10.8cm}
+\begin{minipage}[c]{10.3cm}
 \begin{semiverbatim}
-\lstset{basicstyle=\large}
-\begin{lstlisting}[linewidth=10.8cm]
-# Python
-def read_genotypes (filename):
-    "Read matrix of genotype data"
-\end{lstlisting}
-\end{semiverbatim}
-\end{minipage}
-\end{center}
-
-\vspace*{-8mm}
-
-\begin{center}
-\begin{minipage}[c]{10.8cm}
-\begin{semiverbatim}
-\lstset{basicstyle=\large}
-\begin{lstlisting}[linewidth=10.8cm]
-# R
-plot_genotypes <-
-function(genotypes, ...)
-{
-}
+\lstset{basicstyle=\normalsize}
+\begin{lstlisting}[linewidth=10.3cm]
+0_vcf2db.R
+1_prep_geno.R
+2_prep_pheno_clin.R
+2_prep_pheno_otu.R
+3_prep_covar.R
+4_prep_analysis_pheno_clin.R
+4_prep_analysis_pheno_otu.R
+5_scans.R
+6_grab_peaks.R
+7_find_nearby_peaks.R
 \end{lstlisting}
 \end{semiverbatim}
 \end{minipage}
 \end{center}
 
-\note{Pull out complex or repeated code as a separate function.
-  This makes your code easier to read and maintain.}
-\end{frame}
-
-
-\begin{frame}[c]{6. Create a package/module}
-
-  \centering
-  \Large
-  Don't repeat yourself
-
-  \note{It's surprisingly easy to create an R package (see
-    {\tt https://kbroman.org/pkg\_primer}) and it's even easier to make
-    a Python module.
-
-    When writing functions, try to write them in a somewhat-general
-    way and then pull them out of the project as separate package or
-    module, so that you (and/or others) may reuse them for other purposes.
+\note{
+  Here's an example to take advantage of the way the computer sorts
+  files: a set of R scripts, which show up in the order they are used.
 }
+
 \end{frame}
 
 
-\begin{frame}<handout:0>[c]{7. Use version control (git/GitHub)}
+
+\begin{frame}[c]{No ``{\hilit final}'' in file names}
 
 \vspace*{3mm}
 
 \centering
 
 % comic from http://www.phdcomics.com/comics/archive.php?comicid=1531
-\only<1>{\figh{Figs/phd101212s.png}{0.8}}
+\figh{Figs/phd101212s.png}{0.8}
+
+\note{
+  Never include ``final'' in a file name.
+}
 
 \end{frame}
+
 
 
 \begin{frame}<handout:0>[fragile,c]{No ``{\hilit final}'' in file names}
 
 
 \addtocounter{framenumber}{-1}
+
 
 \begin{center}
 \begin{minipage}[c]{9.5cm}
@@ -560,13 +596,12 @@ function(genotypes, ...)
 \end{center}
 
 
+
 \end{frame}
 
 
-\begin{frame}<handout:0>[fragile,c]{No ``{\hilit final}'' in file names}
+\begin{frame}[fragile,c]{No ``{\hilit final}'' in file names}
 
-
-\addtocounter{framenumber}{-1}
 
 \begin{center}
 \begin{minipage}[c]{9.5cm}
@@ -602,12 +637,485 @@ function(genotypes, ...)
 \end{minipage}
 \end{center}
 
+\note{
+    This is an actual directory on my computer. If you include
+    {\tt final} in a file name, there's a risk that you'll end up with
+    {\tt final{\textunderscore}rev},
+    {\tt final{\textunderscore}rev2}, and
+    {\tt final{\textunderscore}old}.
+
+    Another problem here is that the files aren't organized very well.
+  }
+
+
+\end{frame}
+
+
+\begin{frame}[fragile,c]{Choose good names for things}
+
+
+\begin{center}
+\begin{minipage}[c]{9.5cm}
+\begin{semiverbatim}
+\lstset{basicstyle=\tiny}
+\begin{lstlisting}[escapechar=!,linewidth=9.5cm]
+batches_raw_v1.rds               geneexpr_mlratio_gastroc_v2.rds
+batches_v1.rds                   geneexpr_mlratio_hypo_v1.rds
+clinical_cpl_v2.rds              geneexpr_mlratio_hypo_v2.rds
+clinical_d2o_v2.rds              geneexpr_mlratio_islet_v2.rds
+clinical_lipomics_v4.rds         geneexpr_mlratio_kidney_v2.rds
+clinical_liverTG_v2.rds          geneexpr_mlratio_liver_v2.rds
+clinical_mirna_v2.rds            geneexpr_mlratio_nqrank_adipose_v2.rds
+clinical_necropsy_v4.rds         geneexpr_mlratio_nqrank_gastroc_v2.rds
+clinical_plasmaurine_v3.rds      geneexpr_mlratio_nqrank_hypo_v1.rds
+clinical_rbm_v2.rds              geneexpr_mlratio_nqrank_hypo_v2.rds
+Deprecated/                      geneexpr_mlratio_nqrank_islet_v2.rds
+geneexpr_int1_adipose_v2.rds     geneexpr_mlratio_nqrank_kidney_v2.rds
+geneexpr_int1_gastroc_v2.rds     geneexpr_mlratio_nqrank_liver_v2.rds
+geneexpr_int1_hypo_v2.rds        geneexpr_omit_hypo.rds
+geneexpr_int1_islet_v2.rds       geneexpr_prcomp_adipose_v2.rds
+geneexpr_int1_kidney_v2.rds      geneexpr_prcomp_gastroc_v2.rds
+geneexpr_int1_liver_v2.rds       geneexpr_prcomp_hypo_v2.rds
+geneexpr_int2_adipose_v2.rds     geneexpr_prcomp_islet_v2.rds
+geneexpr_int2_gastroc_v2.rds     geneexpr_prcomp_kidney_v2.rds
+geneexpr_int2_hypo_v2.rds        geneexpr_prcomp_liver_v2.rds
+geneexpr_int2_islet_v2.rds       geno_aligned_w_pmap.rds
+geneexpr_int2_kidney_v2.rds      geno_pmark.rds
+geneexpr_int2_liver_v2.rds       ReadMe.txt
+geneexpr_mlratio_adipose_v2.rds
+\end{lstlisting}
+\end{semiverbatim}
+\end{minipage}
+\end{center}
+
+\note{
+    This is the same set of files, renamed. Using {\tt
+    clinical{\textunderscore}} and {\tt geneexpr{\textunderscore}}
+    brings similar files together.
+
+    A lot of files, but less forbidding.
+  }
 
 \end{frame}
 
 
 
-\begin{frame}<handout:0>[c]{7. Use version control (git/GitHub)}
+\begin{frame}[c]{Document your work}
+
+  \bbi
+\item What is all of this stuff?
+\item What was your analysis process?
+\vspace{1cm}
+\item[$\boldsymbol{\rightarrow}$] {\large {\tt ReadMe} files}
+  \ei
+
+  \note{
+    An overall {\tt ReadMe} file plus an additional such file in each
+    directory.
+
+    Well-named files and directories makes everything easier.
+
+    Also, keep the documentation current. There's nothing worse than
+    documentation that is out of date and doesn't match the contents.
+  }
+
+
+\end{frame}
+
+
+
+
+\begin{frame}[c]{Organizing data in spreadsheets}
+
+
+\figw{Figs/bad_spreadsheet.pdf}{1.0}
+
+
+
+  \note{
+     How you organize your data within files can have a big impact on
+     how easy they are to work with.
+
+     You can probably figure out what the numbers mean here,
+     particularly if I tell you that there were triplicate
+     measurementss under two treatments (1 min or 5 min) of cells that
+     were either normal or mutant and cam from mouse strains B6 or
+     BTBR.
+
+     But it's hard to tell a computer program about the data structure
+     here.
+  }
+\end{frame}
+
+
+
+\begin{frame}[c]{Organizing data in spreadsheets}
+
+
+\figh{Figs/good_spreadsheet.pdf}{0.8}
+
+  \note{
+     This is the first few rows of a reorganized version of the data,
+     as a rectangle where the rows are individual measurements and the
+     columns are variables.
+
+     This is maybe less pretty, but it's much easier to work with.
+  }
+
+\end{frame}
+
+
+
+
+\begin{frame}[c]{Organizing data in spreadsheets}
+
+
+  \bbi
+\item Make it a rectangle
+\item Individual measurements as rows; variables as columns
+\item Single header row
+\item One item per cell
+\item No empty cells
+\item No calculations in the raw data
+\item No highlighting or coloring as data
+  \ei
+
+\vspace{8mm}
+
+\hfill
+\href{https://doi.org/10.1080/00031305.2017.1375989}{\footnotesize
+  \lolit \tt Broman and Woo (2018) Am Stat 72:2-10 \\
+  \hfill doi: 10.1080/00031305.2017.1375989}
+
+  \note{
+    Here are some key principles for organizing data in spreadsheets:
+    make a rectangle with a single header row.
+
+    Never do calculations in your raw data file. If you're doing
+    analyses or making charts in Excel, do so in a copy of the data
+    file. Every time you open the raw data file, there's a risk that
+    you'll mess things up.
+  }
+\end{frame}
+
+
+
+
+\begin{frame}[c]{}
+
+\begin{center}
+  \Large
+
+
+``What the heck is `{\hilit \tt FAD{\textunderscore}NAD SI 8.3{\textunderscore}3.3G}'?''
+
+\end{center}
+
+\note{
+  Sometimes the columns in your data files have meaning only to you.
+
+  If the data analyst can't connect to the measurements, they're just
+  columns of numbers.
+}
+
+\end{frame}
+
+
+
+
+\begin{frame}[c]{Metadata}
+
+  \bbi
+\item Create a data dictionary
+  \bi
+\item Explain each column
+\item Different versions of these variable names
+\item Units
+\item Allowable values
+  \ei
+\item The metadata are data
+  \bi
+\item Make it a rectangle
+  \ei
+\ei
+
+  \note{
+    Clear metadata is critical for others to be able to understand
+    your data. In particular, make a data dictionary that describes
+    the variables. In addition to a description of each column, I like
+    to have short and longer versions of the names for use in data
+    visualizations, as the column names themselves can be cryptic.
+
+    These metadata are data, and so rather than make a Word
+    documention describing the data, I personally would prefer to have
+    another data file with the metadata.
+  }
+
+\end{frame}
+
+
+
+
+\begin{frame}[c]{Data dictionary}
+
+
+\figw{Figs/data_dict.pdf}{1.0}
+
+
+  \note{
+    Here's an example data dictionary. You might also include units
+    and informationa about possible valid values.
+  }
+
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{Everything with a script}
+
+\centering
+\large
+If you do something once, \\
+you'll do it 1000 times.
+
+\note{The most basic principle for reproducible research is: do
+  everything via code.
+
+  Downloading data from the web, converting an Excel file to CSV,
+  renaming columns/variables, omitting bad samples or data points...do
+  all of this with scripts.
+
+  You may be tempted to open up a data file and hand-edit. But if you
+  get a revised version of that file, you'll need to do it again. And
+  it'll be harder to figure out what it was that you did.
+
+  Some things are more cumbersome via code, but in the long run you'll
+  save time.
+}
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{Reproducible reports}
+
+
+\vspace*{8mm}
+
+\vspace*{-0.05\textheight}
+\figw{Figs/example_Rmd.png}{0.92}
+\onslide<2|handout 0>{
+  \vspace*{-0.70\textheight}
+  \hspace*{0.06\textwidth}
+  \figw{Figs/example_Rmd_source.png}{0.92}
+}
+
+\note{I {\nhilit love} R Markdown for making reproducible reports that
+  document the full details of my analysis. R Markdown mixes Markdown
+  (for light-weight markup of text) and R code chunks; when processed
+  with knitr, the R code is executed and results inserted into the
+  final document.
+
+  With these informal reports, I seek to fully capture the entirety of
+  my data explorations and decisions.
+
+  Python people should look at Jupyter notebooks.
+}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile,c]{Automate the process (GNU Make)}
+
+\begin{center}
+\begin{minipage}[c]{13.8cm}
+\begin{semiverbatim}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[escapechar=!,linewidth=13.8cm]
+!{\color{foreground}{R/analysis.html}}!: !{\color{foreground}{R/analysis.Rmd Data/cleandata.csv}}!
+!{\color{foreground}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}!
+
+Data/cleandata.csv: R/prepData.R RawData/rawdata.csv
+    cd R;R CMD BATCH prepData.R
+
+RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
+    Python/xls2csv.py RawData/rawdata.xls > RawData/rawdata.csv
+\end{lstlisting}
+\end{semiverbatim}
+\end{minipage}
+\end{center}
+
+\note{GNU Make is an old (and rather quirky) tool for automating the
+  process of building computer programs. But it's useful much more
+  broadly, and I find it valuable for automating the full process of
+  data file manipulation, data cleaning, and analysis.
+
+  In addition to {\nhilit automating} a complex process, it also
+  {\nhilit documents} the process, including the dependencies among
+  data files and scripts.
+}
+\end{frame}
+
+
+
+\begin{frame}<handout:0>[fragile,c]{Automate the process (GNU Make)}
+
+\addtocounter{framenumber}{-1}
+
+\begin{center}
+\begin{minipage}[c]{13.8cm}
+\begin{semiverbatim}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[escapechar=!,linewidth=13.8cm]
+!{\color{codehilit}{R/analysis.html}}!: !{\color{foreground}{R/analysis.Rmd Data/cleandata.csv}}!
+!{\color{foreground}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}!
+
+Data/cleandata.csv: R/prepData.R RawData/rawdata.csv
+    cd R;R CMD BATCH prepData.R
+
+RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
+    Python/xls2csv.py RawData/rawdata.xls > RawData/rawdata.csv
+\end{lstlisting}
+\end{semiverbatim}
+\end{minipage}
+\end{center}
+
+\end{frame}
+
+
+
+\begin{frame}<handout:0>[fragile,c]{Automate the process (GNU Make)}
+
+\addtocounter{framenumber}{-1}
+
+\begin{center}
+\begin{minipage}[c]{13.8cm}
+\begin{semiverbatim}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[escapechar=!,linewidth=13.8cm]
+!{\color{foreground}{R/analysis.html}}!: !{\color{codehilit}{R/analysis.Rmd Data/cleandata.csv}}!
+!{\color{foreground}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}!
+
+Data/cleandata.csv: R/prepData.R RawData/rawdata.csv
+    cd R;R CMD BATCH prepData.R
+
+RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
+    Python/xls2csv.py RawData/rawdata.xls > RawData/rawdata.csv
+\end{lstlisting}
+\end{semiverbatim}
+\end{minipage}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}<handout:0>[fragile,c]{Automate the process (GNU Make)}
+
+\addtocounter{framenumber}{-1}
+
+\begin{center}
+\begin{minipage}[c]{13.8cm}
+\begin{semiverbatim}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[escapechar=!,linewidth=13.8cm]
+!{\color{foreground}{R/analysis.html}}!: !{\color{foreground}{R/analysis.Rmd Data/cleandata.csv}}!
+!{\color{codehilit}{    cd R;R -e "rmarkdown::render('analysis.Rmd')"}}!
+
+Data/cleandata.csv: R/prepData.R RawData/rawdata.csv
+    cd R;R CMD BATCH prepData.R
+
+RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
+    Python/xls2csv.py RawData/rawdata.xls > RawData/rawdata.csv
+\end{lstlisting}
+\end{semiverbatim}
+\end{minipage}
+\end{center}
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{Write modular code}
+
+  \bbi
+  \item Modular code is easier to understand, maintain, and reuse.
+  \item Turn repeated code into functions
+  \item Combine useful functions into a package or module
+  \ei
+
+  \note{
+    Another important step towards reproducibility is to revise your
+    code to make it more clear.
+
+    The single most important step towards clear code is to pull out
+    complex or repeated code as a separate function.
+    This makes your code easier to read and maintain.
+
+    Next, combine those functions together into a package or module.
+    It's surprisingly easy to create an R package (see {\tt
+      https://kbroman.org/pkg\_primer}) and it's even easier to make a
+    Python module.
+
+    When writing functions, try to write them in a somewhat-general
+    way and then pull them out of the project as separate package or
+    module, so that you (and/or others) may reuse them for other
+    purposes.
+}
+
+\end{frame}
+
+
+
+\begin{frame}[c]{Keeping track of versions}
+
+\bbi
+  \item Google drive / Dropbox / Box
+
+  \item Version numbers in file names
+
+  \item Formal version control (e.g., git/GitHub)
+    \bi
+  \item Browse changes
+  \item Try new things without fear of breaking what works
+  \item Jump to the state of the project at any time point
+  \item Merge simultaneous changes from multiple people
+    \ei
+\ei
+
+
+  \note{
+    We all struggle to keep track of versions of things.
+
+    Shared drives (like google drive, dropbox, and box) often keep
+    track of past versions, but usually there's a time limit (like
+    30 days or a year).
+
+    You can make copies of file with a version number appended to
+    the name. You might zip up a directory and include the date in the
+    zipped file.
+
+    Formal version control has a number of advantages, including easy
+    of browsing the history or jumping to a particular time point.
+    The ability to merge simultaneous changes from multiple users is a
+    key advantage.
+
+    git can be hard to learn; it's designed for pretty hard-core
+    programmers. But there are growing learning resources, and the
+    long-term payoff is considerable. For collaborative projects, the
+    payoff is immediate.
+  }
+
+\end{frame}
+
+
+
+
+\begin{frame}<handout:0>[c]{Version control (git/GitHub)}
 
 \only<1>{\addtocounter{framenumber}{-1}}
 
@@ -621,9 +1129,7 @@ function(genotypes, ...)
 \end{frame}
 
 
-\begin{frame}[c]{7. Use version control (git/GitHub)}
-
-\only<1>{\addtocounter{framenumber}{-1}}
+\begin{frame}[c]{Version control (git/GitHub)}
 
 \vspace*{3mm}
 
@@ -652,7 +1158,28 @@ function(genotypes, ...)
 
 
 
-\begin{frame}{8. License your software}
+
+\begin{frame}[c]{Backups}
+
+\bbi
+  \item Multiple places, including off-site
+
+  \item Automatic
+\ei
+
+\note{
+  I can't emphasize enough the importance of backups. And you must
+  have a copy off-site. And if it's not automatic, it won't happen.
+}
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}{License your software}
 
 \vspace{60pt}
 
@@ -677,6 +1204,83 @@ function(genotypes, ...)
 \end{frame}
 
 
+
+
+
+\begin{frame}[c]{Share your stuff}
+
+
+  \bbi
+\item Code
+  \bi
+\item GitHub / BitBucket
+\item Zenodo (archival, with DOIs)
+  \ei
+
+\item Data
+  \bi
+\item Domain-specific repository {\lolit (e.g., dbGAP)}
+\item General repository {\lolit (e.g., github, figshare, zenodo, datadryad)}
+\item Institutional repository
+  \ei
+
+  \ei
+
+  \note{
+    A reproducible workflow is valuable even if you don't intend to
+    share your work with others.
+
+    But if do want to share, it's best to place things at a
+    third-party site. Ideally one that can be trusted as an archive
+    and that provides DOIs.
+
+    Place code at GitHub (or the similar site, BitBucket). The only problem
+    is that it can't necessarily be trusted to still be there 5 years from now.
+    There's an easy way to have ``releases'' archived at zenodo.org
+    automatically, with a DOI. So I recommend that.
+
+    For data, it's probably best to use a domain-specific repository,
+    if there is an appropriate one. Otherwise, general repositories
+    github, figshare, zenodo, or datadryad. Again, github is not ideal
+    because it's not archival and doesn't give DOIs.
+  }
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}[c]{Summary}
+
+  \begin{enumerate}
+  \item Organize your project
+  \item Choose good names for things
+  \item Document what's what
+  \item Organize data as a rectangle
+  \item Metadata is data
+  \item Everything with a script
+  \item Even better: reproducible reports
+  \item Automate the process {\lolit (GNU Make)}
+  \item Write modular code {\lolit (functions and packages)}
+  \item Use version control {\lolit (git/GitHub)}
+  \item License your software
+  \item Share your data and code
+  \end{enumerate}
+
+
+\note{
+  Summaries are always good.
+
+  Again, don't try to change everything at once.
+  Reproducibility can be surprisingly hard and requires a daily
+  commitment. And here I'm just thinking about a project with a single
+  data analyst. A collaboration with multiple analysts is yet harder.
+}
+\end{frame}
+
+
 \begin{frame}[c]{Other considerations}
 
   \begin{itemize}
@@ -697,10 +1301,6 @@ function(genotypes, ...)
     \begin{itemize}
     \item[] {\lolit coordinating who does what and where things live}
     \end{itemize}
-  \item Distribution
-    \begin{itemize}
-    \item[] {\lolit where and how to distribute data and code?}
-    \end{itemize}
   \end{itemize}
 
 \note{I've focused on issues for small-scale, single-investigator
@@ -708,6 +1308,315 @@ function(genotypes, ...)
   everything.}
 
 \end{frame}
+
+
+
+
+
+\begin{frame}[c]{Collaboration}
+
+  \bbi
+\item Do more, by working in parallel
+\item Do more, through diversity of ideas and skills
+\item Reproducible pipelines have immediate advantages
+\item Tests of reproducibility
+\item Code review
+  \ei
+
+  \note{
+    Collaboration has a lot of advantages, including for
+    reproducibility efforts.
+
+    It can be useful to have a pair of people regularly review each
+    other's code, but it can be hard to get your busy friends to pay
+    attention to your little project. But if you are working together
+    on a project, you can more naturally build in some code review.
+
+    Moreover, you can explicitly test the reproducibility of your
+    analyses, by having your collaborator rerun your work, and vice
+    versa.
+  }
+
+\end{frame}
+
+
+
+\begin{frame}[c]{Challenges in collaborations}
+
+  \bbi
+{\only<2->{\lolit }
+\item Shared vision?
+\item Compromise
+\item Coordination
+\item Communication
+\item Sharing code and data
+\item Synchronization
+}
+\onslide<2->{\item Weakest link?}
+  \ei
+
+  \note{
+    Collaboration also has challenges.
+
+    Do you have a shared vision for the reproducibility of the
+    project? You'll no doubt need to make some compromises about how
+    things are done: you can't both just do things the way you've
+    always done them. Careful coordination and regular communication
+    are key.
+
+    And then there are the technical challenges of how to share the
+    code and data and make sure your two working projects remain in
+    sync.
+
+    In a sense, the reproducibility of a collaborative project is
+    dependent on the weakest link. If one collaborator refuses to
+    fully participate and share their work, the chain is broken.
+}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{}
+
+
+\begin{center}
+\Large
+  {\color{title} Challenges} \\[24pt]
+  {\lolit \large (totally hypothetical)}
+\end{center}
+
+\note{
+  A collaboration like this will pose many challenges. The following are
+  {\nhilit totally hypothetical}. Really.
+}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{}
+
+\begin{center}
+  \Large
+
+  ``Could we meet to talk about the data file structure?'' \\[36pt]
+  \onslide<2->{``No.''}
+\end{center}
+
+\note{
+  Say the first of many sets of data are set up in a way that is
+  complicated to handle, both in data entry and for analysis. Will
+  your collaborator work with you to refine things?
+
+  Or will every new data file require a day of work, so that it can be
+  combined with prior data?
+}
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}[c]{}
+
+\begin{center}
+  \Large
+
+
+  ``Wait, these results seem to be based \\
+  on the older SNP map.''
+
+\end{center}
+
+\note{
+  It can be hard to keep in sync across groups in a multi-site
+  project. If a problem is discovered and some aspect of data
+  preprocessing needs to be redone, will this get communicated to all
+  analysis teams, so that relevant analyses get rerun as needed?
+}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{}
+
+\begin{center}
+  \Large
+
+
+  ``Could you write the methods section?'' \\[36pt]
+  ``But I didn't do the work, \\
+  and we don't have the code that was used.''
+
+
+
+\end{center}
+
+\note{
+  Are all teams sharing their work with each other?
+}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{}
+
+\begin{center}
+  \Large
+
+
+``My data analyst has taken a job at Google.''
+
+\end{center}
+
+\note{
+    What happens if a key data analyst leaves the project?
+}
+
+\end{frame}
+
+
+
+\begin{frame}[c]{}
+
+\begin{center}
+  \Large
+
+
+``Could you do these analyses? X said they would, but they're not
+  responding to my emails.''
+
+\end{center}
+
+\note{
+  Everyone has multiple things going on, and sometimes there is need
+  for rush analyses, say for a grant submission or conference
+  presentation. Is there a shared understanding of who will do what
+  when, and how emergencies can be handled?
+
+  The organization of a project often depends on the worst day you
+  spent on it. If you need to do a bunch of stuff last-minute, will
+  you leave the project directory in a mess, or will you clean up
+  after yourself?
+}
+
+\end{frame}
+
+
+
+
+\begin{frame}[c]{Shared vision}
+
+  \bbi
+\item Publication
+\item Code \& data sharing
+\item Who will do what
+\item Timeline
+\item Ongoing sharing of methods, results
+  \ei
+
+\note{
+  Critical for a successful collaboration is that the collaborators
+  have a shared vision for the project. We often maybe think about
+  being in agreement on the approach to publication and co-authorship.
+  But perhaps more difficult is coming to an agreement on data and
+  code sharing (what, where, and when?), on who will do what, on how
+  soon it will be done, and on the ongoing sharing, among collaborators,
+  of detailed methods and results.
+}
+
+\end{frame}
+
+
+
+\begin{frame}[c]{Shared workspace}
+
+  \bbi
+\item Project structure
+\item Data and metadata formats
+\item Software environment
+\item Automated sync {\lolit (or it won't happen)}
+  \ei
+
+\note{
+    Also important is the technology or engineering of sharing. Can
+    the collaborators agree on the project structure, data and
+    metadata formats, and the software environment?
+
+    Some groups may use R and some python. This should not pose a problem.
+
+    A key issue is how to keep the multiple groups' work in sync. It
+    is best that this can be done automatically. Experience
+    demonstrates that if synchronization approach requires some manual
+    steps, they will not be done consistently.
+}
+
+\end{frame}
+
+
+
+
+\begin{frame}[c]{Technology for sharing}
+
+  \bbi
+\item Data
+  \bi
+\item figshare
+\item dropbox / box / google drive
+  \ei
+\item Code
+  \bi
+\item github / bitbucket
+  \ei
+\item Pipeline / workflow
+  \bi
+\item make / drake / snakemake / rake
+  \ei
+\item Full environment
+  \bi
+\item docker containers
+\item \href{https://mybinder.org}{\tt mybinder.org} /
+  \href{https://wholetale.org}{\tt wholetale.org}
+  \ei
+  \ei
+
+\note{
+  I must admit to not being totally confident about what advice to
+  give, regarding the tools to use for sharing data and code among
+  collaborators.
+
+  For sharing data, simple options include posting large files on a
+  data repository like figshare, or using cloud drive like dropbox,
+  box, or google drive.
+
+  For sharing code, I prefer to use a version control system like git,
+  with github, bitbucket, or a locally-managed equivalent.
+
+  For sharing the analysis pipeline or workflow, one can
+  incorporate a system like make (or drake, snakemake, or rake) with
+  the code.
+
+  The full software environment could be replicated across teams using
+  docker containers. Binder and Whole Tale are two systems for making
+  this easier.
+}
+
+\end{frame}
+
+
 
 
 \begin{frame}[c]{}
@@ -730,24 +1639,31 @@ will be reproducible.
 
 
 
-\begin{frame}[c]{Summary}
 
-  \begin{enumerate}
-  \itemsep12pt
-  \item Organize your data \& code
-  \item Everything with a script
-  \item Automate the process (GNU Make)
-  \item Turn scripts into reproducible reports
-  \item Turn repeated code into functions
-  \item Create a package/module
-  \item Use version control (git/GitHub)
-  \item Pick a license, any license
-  \end{enumerate}
+\begin{frame}[c]{}
 
-  \note{
-    It's always good to include a summary.
+\begin{center}
+\large
+The second-most important tool is {\hilit training}.
+\end{center}
+
+\vspace*{12mm}
+
+\hfill
+{\lolit
+{\textendash} \href{https://kbroman.org}{me} \hspace*{20mm}
+}
+
+\note{
+  I've long felt that the key need, in getting computational
+  scientists to adopt a reproducible workflow, is training. For the
+  most part, all of the software tools are available, but many people
+  haven't incorporated them into their daily work.
 }
 \end{frame}
+
+
+
 
 \begin{frame}[c]{}
 

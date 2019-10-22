@@ -35,6 +35,12 @@ These are slides for a talk that I gave for
 - [David O'Connor's lab](http://labs.pathology.wisc.edu/oconnor/) at UW-Madison on 19 March 2018
 - [Summer Research Program in Biomedical Data Science](https://www.biostat.wisc.edu/content/summer-research)
   at UW-Madison on 11 July 2018
+- [Cellular & Molecular Pathology Graduate
+  Program](http://cmp.wisc.edu/) at UW-Madison on
+  29 Nov 2018
+- Providence/Boston Center for AIDS Research Biostatistics Core, Boston
+  University, on 14 May 2019
+- For MD/PhD students at UW Madison on 28 Oct 2019
 
 It was revised a bit each time.
 

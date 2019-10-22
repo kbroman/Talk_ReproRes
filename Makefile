@@ -1,10 +1,14 @@
 STEM = repro_research
+R_OPTS=--no-save --no-restore --no-init-file --no-site-file
 
-$(STEM).pdf: $(STEM).tex header.tex
+$(STEM).pdf: $(STEM).tex header.tex Figs/data_dict.pdf
 	xelatex $<
 
 notes: $(STEM)_withnotes.pdf
 all: $(STEM).pdf notes web
+
+Figs/data_dict.pdf: R/spreadsheets.R
+	cd $(<D);R $(R_OPTS) -e "source('$(<F)')"
 
 $(STEM)_withnotes.pdf: $(STEM)_withnotes.tex header.tex
 	xelatex $(STEM)_withnotes
