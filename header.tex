@@ -25,26 +25,18 @@
 % named colors
 \definecolor{offwhite}{RGB}{255,250,240}
 \definecolor{gray}{RGB}{155,155,155}
+\definecolor{purple}{RGB}{177,13,201}
+\definecolor{green}{RGB}{46,204,64}
 
-\ifx\notescolors\undefined % slides
-  \definecolor{foreground}{RGB}{255,255,255}
-  \definecolor{background}{RGB}{24,24,24}
-  \definecolor{title}{RGB}{107,174,214}
-  \definecolor{subtitle}{RGB}{102,255,204}
-  \definecolor{hilit}{RGB}{102,255,204}
-  \definecolor{vhilit}{RGB}{255,111,207}
-  \definecolor{codehilit}{RGB}{255,111,207}
-  \definecolor{lolit}{RGB}{155,155,155}
-\else % notes
-  \definecolor{background}{RGB}{255,255,255}
-  \definecolor{foreground}{RGB}{24,24,24}
-  \definecolor{title}{RGB}{27,94,134}
-  \definecolor{subtitle}{RGB}{22,175,124}
-  \definecolor{hilit}{RGB}{122,0,128}
-  \definecolor{vhilit}{RGB}{255,0,128}
-  \definecolor{codehilit}{RGB}{24,24,24}
-  \definecolor{lolit}{RGB}{95,95,95}
-\fi
+\definecolor{background}{RGB}{255,255,255}
+\definecolor{foreground}{RGB}{24,24,24}
+\definecolor{title}{RGB}{27,94,134}
+\definecolor{subtitle}{RGB}{22,175,124}
+\definecolor{hilit}{RGB}{122,0,128}
+\definecolor{vhilit}{RGB}{255,0,128}
+\definecolor{codehilit}{RGB}{255,0,128}
+\definecolor{lolit}{RGB}{95,95,95}
+\definecolor{myyellow}{rgb}{1,1,0.7}
 \definecolor{nhilit}{RGB}{128,0,128}  % hilit color in notes
 \definecolor{nvhilit}{RGB}{255,0,128} % vhilit for notes
 
@@ -77,31 +69,25 @@
 % default link color
 \hypersetup{colorlinks, urlcolor={hilit}}
 
-\ifx\notescolors\undefined % slides
-  % set up listing environment
-  \lstset{language=bash,
-          basicstyle=\ttfamily\scriptsize,
-          frame=single,
-          commentstyle=,
-          backgroundcolor=\color{darkgray},
-          showspaces=false,
-          showstringspaces=false
-          }
-\else % notes
-  \lstset{language=bash,
-          basicstyle=\ttfamily\scriptsize,
-          frame=single,
-          commentstyle=,
-          backgroundcolor=\color{offwhite},
-          showspaces=false,
-          showstringspaces=false
-          }
-\fi
+\lstset{language=bash,
+        basicstyle=\ttfamily\scriptsize,
+        frame=single,
+        commentstyle=,
+        backgroundcolor=\color{offwhite},
+        showspaces=false,
+        showstringspaces=false
+        }
+
 
 % a few macros
 \newcommand{\bi}{\begin{itemize}}
 \newcommand{\bbi}{\vspace{24pt} \begin{itemize} \itemsep8pt}
 \newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\bbe}{\vspace{24pt} \begin{enumerate} \itemsep8pt}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\sbi}{\begin{itemize} \fontsize{9pt}{9.5}\selectfont}
+\newcommand{\sbe}{\begin{enumerate} \fontsize{9pt}{9.5}\selectfont}
 \newcommand{\ig}{\includegraphics}
 \newcommand{\subt}[1]{{\footnotesize \color{subtitle} {#1}}}
 \newcommand{\ttsm}{\tt \small}

@@ -13,7 +13,7 @@
 % title info
 \title{Steps toward reproducible research}
 \author{\href{https://kbroman.org}{Karl Broman}}
-\institute{Biostatistics \& Medical Informatics \\ Univ.\ Wisconsin{\textendash}Madison}
+\institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
 \date{\href{https://kbroman.org}{\tt \scriptsize \color{foreground} kbroman.org}
 \\[-4pt]
 \href{https://github.com/kbroman}{\tt \scriptsize \color{foreground} github.com/kbroman}
@@ -33,14 +33,8 @@
 \frame{
   \titlepage
 
-  \vfill \hfill \includegraphics[height=6mm]{Figs/cc-zero.png} \vspace*{-3mm}
-
-  \note{These are slides for a talk I've given a whole bunch of times,
-    most recently for MD/PhD students at UW-Madison on 28 Oct 2019.
-
-    Source: {\tt https://github.com/kbroman/Talk\_ReproRes} \\
-    These slides, with notes: {\tt https://bit.ly/steps2rr} \\
-    Full slides without notes: {\tt https://bit.ly/steps2rr\_nonotes}
+  \note{This lecture is based on slides for a talk I've given a whole
+    bunch of times.
 
     By ``reproducibly,'' I'm referring to ``computational
     reproducibility,'' by which I mean that the data and code for a
@@ -50,6 +44,10 @@
     to do, and it's even more difficult in the context of a
     collaboration between two or more data analysts.
 
+    This lecture is an overview of reproducible research and the basic
+    principles and tools for ensuring that computational work is
+    reproducible. In subsequent lectures, I'll be drilling into
+    individual tools/topics in more detail.
 }
 } }
 
@@ -783,9 +781,9 @@ geneexpr_mlratio_adipose_v2.rds
 \vspace{8mm}
 
 \hfill
-\href{https://doi.org/10.1080/00031305.2017.1375989}{\footnotesize
+\href{https://doi.org/gdz6cm}{\footnotesize
   \lolit \tt Broman and Woo (2018) Am Stat 72:2-10 \\
-  \hfill doi: 10.1080/00031305.2017.1375989}
+  \hfill doi.org/gdz6cm}
 
   \note{
     Here are some key principles for organizing data in spreadsheets:
@@ -1035,6 +1033,8 @@ RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
 \end{minipage}
 \end{center}
 \end{frame}
+
+
 
 
 
@@ -1311,8 +1311,6 @@ RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
 
 
 
-
-
 \begin{frame}[c]{Collaboration}
 
   \bbi
@@ -1344,7 +1342,7 @@ RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
 \begin{frame}[c]{Challenges in collaborations}
 
   \bbi
-{\only<2->{\lolit }
+{\only<2-|handout 0>{\lolit }
 \item Shared vision?
 \item Compromise
 \item Coordination
@@ -1639,7 +1637,6 @@ will be reproducible.
 
 
 
-
 \begin{frame}[c]{}
 
 \begin{center}
@@ -1669,7 +1666,7 @@ The second-most important tool is {\hilit training}.
 
 \Large
 
-Slides: \href{https://bit.ly/steps2rr}{\tt bit.ly/steps2rr} \quad
+Slides: \href{https://bit.ly/steps2rr.pdf}{\tt bit.ly/steps2rr} \quad
 \includegraphics[height=5mm]{Figs/cc-zero.png}
 
 \vspace{10mm}
