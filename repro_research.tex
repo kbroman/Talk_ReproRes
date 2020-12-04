@@ -1332,6 +1332,60 @@ RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
 
 
 
+\begin{frame}[c]{}
+
+\centering
+\vspace{80pt}
+
+It's not that we don't test our code, \\[8pt]
+it's that we don't store our tests \\
+so they can be re-run automatically.
+
+\vspace{36pt}
+
+\hfill \lolit {\textendash} Hadley Wickham \hspace{13mm}
+
+\vspace{45pt}
+{\footnotesize
+\hfill \href{http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}{R Journal 3(1):5{\textendash}10, 2011}
+}
+
+\note{
+  This is from Hadley's paper about his {\tt testthat} package.
+}
+\end{frame}
+
+
+\begin{frame}[c]{Testing and debugging}
+
+\hspace{2cm} find a bug \hspace{2mm} $\longrightarrow$ \hspace{3mm} {\hilit write a test}
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+\onslide<2>{
+\hspace{2cm} fix a bug \hspace{4.3mm} $\longrightarrow$ \hspace{3mm} {\hilit look for other instances of that mistake}
+}
+
+\note{
+  A few quick points about software testing: the goal is to identify
+  bugs earlier when they are easier to fix. (It is closer in time to
+  when you introduced them.)
+
+  When you find a bug, first write a test to reproduce the problem.
+  Then it's clear when you've fixed it.
+
+  When you do fix it, search through the rest of the code base to see
+  if you can find other instances of that mistake. We often make the
+  same mistakes repeatedly.
+}
+
+\end{frame}
+
+
+
 \begin{frame}[c]{Collaboration}
 
   \bbi
