@@ -917,6 +917,85 @@ you'll do it 1000 times.
 
 
 
+\begin{frame}[c]{Small corrections}
+
+\only<1|handout 0>{\figw{Figs/spreadsheet_g_v_mg.pdf}{0.95}}
+\only<2>{\figw{Figs/spreadsheet_g_v_mg_hilit.pdf}{0.95}}
+
+
+  \note{
+    Here is a case where a few values were in grams rather than
+    milligrams. You might be tempted to hand-edit the file. It would
+    be better to handle it in your script. Even better would be to go
+    back to your collaborator and have them fix the primary data.
+  }
+\end{frame}
+
+
+
+
+\begin{frame}{Differing column names}
+
+\includegraphics[height=0.8\textheight]{Figs/spreadsheet_colnames1.pdf}
+
+\vspace*{-0.6\textheight}
+\hspace*{0.1\textwidth}
+\includegraphics[height=0.8\textheight]{Figs/spreadsheet_colnames2.pdf}
+
+  \note{
+    Here the column names have been changed between two data files.
+    You again might be tempted to hand-edit the files to match, but if
+    you do that once, you'll be doing that every time the files are
+    updated.
+  }
+\end{frame}
+
+
+\begin{frame}{Differing column order}
+
+\includegraphics[height=0.8\textheight]{Figs/spreadsheet_colnames1.pdf}
+
+\vspace*{-0.6\textheight}
+\hspace*{0.1\textwidth}
+\includegraphics[height=0.8\textheight]{Figs/spreadsheet_colnames2.pdf}
+
+\vspace*{-0.6\textheight}
+\hspace*{0.2\textwidth}
+\includegraphics[height=0.8\textheight]{Figs/spreadsheet_colnames3.pdf}
+
+  \note{
+    Now the order of the columns have changed!
+    Again, we need to be able to handle these sorts of changes.
+
+    This also emphasizes the importance of relying on the names rather
+    than positions of columns (or rows).
+
+    I once had a project where the data were in a 500-worksheet excel
+    file, one sheet per subject. Each sheet had a complex layout where
+    you had to pick out various values from different places. And the
+    order of the rows was different in the middle hundred sheets,
+    versus the other 400 sheets.
+  }
+\end{frame}
+
+
+
+\begin{frame}[c]{Metadata solution}
+
+\figh{Figs/file_metadata_example}{0.8}
+
+  \note{
+      My solution to these problems was to create a metadata file that
+      indicated the names of the variables, what files to find them,
+      what their names were in each file, and what the individual IDs
+      names were in those files. I also needed an "offset" column,
+      because in some cases it was like "the column two to the right
+      of the column name \_\_\_\_\_."
+  }
+\end{frame}
+
+
+
 
 
 \begin{frame}[c]{Reproducible reports}
