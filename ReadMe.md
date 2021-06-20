@@ -48,6 +48,8 @@ The compiled slides:
 [pdf](https://www.biostat.wisc.edu/~kbroman/presentations/steps2rr.pdf) |
 [pdf with notes](https://www.biostat.wisc.edu/~kbroman/presentations/steps2rr_withnotes.pdf)
 
+Videos: [at home](https://youtu.be/rNQ-RlG3JnQ) | [ASA](http://magazine.amstat.org/videos/education_webinars/ReproducibleResearch.mp4) | [TAGC](https://www.youtube.com/watch?v=u-ZgiYjJ4lA) | [UMass-Amherst](https://www.youtube.com/watch?v=L4Qs0F7bLYY&t=460s)
+
 ---
 
 To the extent possible under law,
