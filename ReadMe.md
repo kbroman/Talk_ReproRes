@@ -45,8 +45,8 @@ These are slides for a talk that I gave for
 It was revised a bit each time.
 
 The compiled slides:
-[pdf](https://www.biostat.wisc.edu/~kbroman/presentations/steps2rr.pdf) |
-[pdf with notes](https://www.biostat.wisc.edu/~kbroman/presentations/steps2rr_withnotes.pdf)
+[pdf](https://kbroman.org/Talk_ReproRes) |
+[pdf with notes](https://kbroman.org/Talk_ReproRes/repro_research_withnotes.pdf}
 
 Videos: [at home](https://youtu.be/rNQ-RlG3JnQ) | [ASA](http://magazine.amstat.org/videos/education_webinars/ReproducibleResearch.mp4) | [TAGC](https://www.youtube.com/watch?v=u-ZgiYjJ4lA) | [UMass-Amherst](https://www.youtube.com/watch?v=L4Qs0F7bLYY&t=460s)
 
